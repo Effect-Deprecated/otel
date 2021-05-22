@@ -34,31 +34,36 @@ const program = withSpan(`SPSPSPSPSPSP`)(
   )
 )
 
-const GrpcTracing = grpcConfigM(
-  T.succeedWith(() => {
-    const metadata = new Metadata()
-    metadata.set("x-honeycomb-team", "59bd780d9f223110684d4161227ec1fc")
-    metadata.set("x-honeycomb-dataset", "effect")
+export const GrpcTracing = GRPCSimpleProcessor["<<<"](
+  grpcConfigM(
+    T.succeedWith(() => {
+      const metadata = new Metadata()
+      metadata.set("x-honeycomb-team", "59bd780d9f223110684d4161227ec1fc")
+      metadata.set("x-honeycomb-dataset", "effect")
 
-    return {
-      serviceName: "nod-otlp-effect",
-      url: "api.honeycomb.io:443",
-      credentials: credentials.createSsl(),
-      metadata
-    }
-  })
-)[">>>"](GRPCSimpleProcessor)
+      return {
+        serviceName: "nod-otlp-effect",
+        url: "api.honeycomb.io:443",
+        credentials: credentials.createSsl(),
+        metadata
+      }
+    })
+  )
+)
+export const JaegerTracing = JaegerSimpleProcessor["<<<"](
+  jaegerConfigM(
+    T.succeedWith(() => ({
+      serviceName: "my-service",
+      host: "localhost",
+      port: 6832
+    }))
+  )
+)
 
-export const JaegerTracing = jaegerConfigM(
-  T.succeedWith(() => ({
-    serviceName: "my-service",
-    host: "localhost",
-    port: 6832
-  }))
-)[">>>"](JaegerSimpleProcessor)
-
-export const TracingAllInOne = NodeTracingProvider[">+>"](
-  GrpcTracing["+++"](ConsoleSimpleProcessor)["+++"](JaegerTracing)
-)[">>>"](LiveOtelTracer)
+export const TracingAllInOne = LiveOtelTracer["<<<"](
+  NodeTracingProvider[">+>"](
+    GrpcTracing["+++"](ConsoleSimpleProcessor)["+++"](JaegerTracing)
+  )
+)
 
 pipe(program, T.provideSomeLayer(TracingAllInOne), R.runMain)

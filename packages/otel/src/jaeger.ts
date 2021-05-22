@@ -1,16 +1,12 @@
 import * as T from "@effect-ts/core/Effect"
 import * as L from "@effect-ts/core/Effect/Layer"
 import * as M from "@effect-ts/core/Effect/Managed"
-import { identity, pipe } from "@effect-ts/core/Function"
+import { pipe } from "@effect-ts/core/Function"
 import { tag } from "@effect-ts/core/Has"
 import type { ExporterConfig } from "@opentelemetry/exporter-jaeger"
 import { JaegerExporter } from "@opentelemetry/exporter-jaeger"
 
-import {
-  SimpleTracingSpanProcessor,
-  TracingSpanExporter,
-  TracingSpanExporterSymbol
-} from "./tracer"
+import { SimpleTracingSpanProcessor } from "./tracer"
 
 export const JaegerTracingExporterConfigSymbol = Symbol()
 
@@ -59,16 +55,13 @@ export const makeJaegerTracingSpanExporter = M.gen(function* (_) {
     )
   )
 
-  return identity<TracingSpanExporter>({
-    [TracingSpanExporterSymbol]: TracingSpanExporterSymbol,
-    spanExporter
-  })
+  return spanExporter
 })
 
-export const JaegerTracingSpanExporter = L.fromManaged(TracingSpanExporter)(
-  makeJaegerTracingSpanExporter
-).setKey(Symbol())
+export const JaegerSimpleProcessorTag =
+  tag<SimpleTracingSpanProcessor<JaegerExporter>>()
 
-export const JaegerSimpleProcessor = JaegerTracingSpanExporter[">>>"](
-  SimpleTracingSpanProcessor()
+export const JaegerSimpleProcessor = SimpleTracingSpanProcessor(
+  JaegerSimpleProcessorTag,
+  makeJaegerTracingSpanExporter
 )

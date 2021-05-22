@@ -3,7 +3,7 @@ import { pretty } from "@effect-ts/core/Effect/Cause"
 import * as L from "@effect-ts/core/Effect/Layer"
 import * as M from "@effect-ts/core/Effect/Managed"
 import { identity, pipe } from "@effect-ts/core/Function"
-import type { Has } from "@effect-ts/core/Has"
+import type { Has, Tag } from "@effect-ts/core/Has"
 import { tag } from "@effect-ts/core/Has"
 import * as O from "@effect-ts/core/Option"
 import type {
@@ -21,53 +21,52 @@ import { ConsoleSpanExporter, SimpleSpanProcessor } from "@opentelemetry/tracing
 // Span Processor
 //
 
-export const makeSimpleTracingSpanProcessor = M.gen(function* (_) {
-  const { spanExporter } = yield* _(TracingSpanExporter)
+export const SimpleTracingSpanProcessorSymbol = Symbol()
+export type SimpleTracingSpanProcessorSymbol = typeof SimpleTracingSpanProcessorSymbol
 
-  const spanProcessor = yield* _(
-    T.succeedWith(() => new SimpleSpanProcessor(spanExporter))
-  )
+export interface SimpleTracingSpanProcessor<A extends SpanExporter> {
+  readonly [SimpleTracingSpanProcessorSymbol]: SimpleTracingSpanProcessorSymbol
+  readonly spanExporter: A
+  readonly spanProcessor: SimpleSpanProcessor
+}
 
-  const { tracerProvider } = yield* _(TracingProvider)
+export const makeSimpleTracingSpanProcessor = <R, E, A extends SpanExporter>(
+  exporter: M.Managed<R, E, A>
+) =>
+  M.gen(function* (_) {
+    const { tracerProvider } = yield* _(TracingProvider)
 
-  yield* _(T.succeedWith(() => tracerProvider.addSpanProcessor(spanProcessor)))
+    const spanExporter = yield* _(exporter)
 
-  return {}
-})
+    const spanProcessor = yield* _(
+      T.succeedWith(() => new SimpleSpanProcessor(spanExporter))
+    )
 
-export function SimpleTracingSpanProcessor() {
-  return L.fresh(L.fromRawManaged(makeSimpleTracingSpanProcessor))
+    yield* _(T.succeedWith(() => tracerProvider.addSpanProcessor(spanProcessor)))
+
+    return identity<SimpleTracingSpanProcessor<A>>({
+      [SimpleTracingSpanProcessorSymbol]: SimpleTracingSpanProcessorSymbol,
+      spanExporter,
+      spanProcessor
+    })
+  })
+
+export function SimpleTracingSpanProcessor<R, E, A extends SpanExporter>(
+  tag: Tag<SimpleTracingSpanProcessor<A>>,
+  exporter: M.Managed<R, E, A>
+) {
+  return L.fromManaged(tag)(makeSimpleTracingSpanProcessor(exporter))
 }
 
 //
 // Span Exporter
 //
+export const ConsoleSimpleProcessorTag =
+  tag<SimpleTracingSpanProcessor<ConsoleSpanExporter>>()
 
-export const TracingSpanExporterSymbol = Symbol()
-export type TracingSpanExporterSymbol = typeof TracingSpanExporterSymbol
-
-export interface TracingSpanExporter {
-  readonly [TracingSpanExporterSymbol]: TracingSpanExporterSymbol
-  readonly spanExporter: SpanExporter
-}
-
-export const TracingSpanExporter = tag<TracingSpanExporter>()
-
-export const makeConsoleTracingSpanExporter = M.gen(function* (_) {
-  const spanExporter = yield* _(T.succeedWith(() => new ConsoleSpanExporter()))
-
-  return identity<TracingSpanExporter>({
-    [TracingSpanExporterSymbol]: TracingSpanExporterSymbol,
-    spanExporter
-  })
-})
-
-export const ConsoleTracingSpanExporter = L.fromManaged(TracingSpanExporter)(
-  makeConsoleTracingSpanExporter
-).setKey(Symbol())
-
-export const ConsoleSimpleProcessor = ConsoleTracingSpanExporter[">>>"](
-  SimpleTracingSpanProcessor()
+export const ConsoleSimpleProcessor = SimpleTracingSpanProcessor(
+  ConsoleSimpleProcessorTag,
+  M.succeedWith(() => new ConsoleSpanExporter())
 )
 
 //
