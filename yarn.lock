@@ -374,6 +374,11 @@
   dependencies:
     "@effect-ts/system" "^0.36.2"
 
+"@effect-ts/jest@^0.27.0":
+  version "0.27.0"
+  resolved "https://registry.yarnpkg.com/@effect-ts/jest/-/jest-0.27.0.tgz#b4f235ff73b54ed6784edee167c2e5da920806ef"
+  integrity sha512-6mh6q2yCck0BuOK6ArDXmchU9n2aSD0+p5esY+4hy7f8v2i8rKMbT1FT7fN24uf+EmV7HamEZpIY8uasoflYJg==
+
 "@effect-ts/node@^0.25.0":
   version "0.25.0"
   resolved "https://registry.yarnpkg.com/@effect-ts/node/-/node-0.25.0.tgz#5cdd711b66da0c51f76106d90e9727c5c85e46ee"

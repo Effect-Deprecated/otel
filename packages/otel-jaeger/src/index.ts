@@ -3,10 +3,9 @@ import * as L from "@effect-ts/core/Effect/Layer"
 import * as M from "@effect-ts/core/Effect/Managed"
 import { pipe } from "@effect-ts/core/Function"
 import { tag } from "@effect-ts/core/Has"
+import { SimpleProcessor } from "@effect-ts/otel"
 import type { ExporterConfig } from "@opentelemetry/exporter-jaeger"
 import { JaegerExporter } from "@opentelemetry/exporter-jaeger"
-
-import { SimpleTracingSpanProcessor } from "./tracer"
 
 export const JaegerTracingExporterConfigSymbol = Symbol()
 
@@ -58,10 +57,9 @@ export const makeJaegerTracingSpanExporter = M.gen(function* (_) {
   return spanExporter
 })
 
-export const JaegerSimpleProcessorTag =
-  tag<SimpleTracingSpanProcessor<JaegerExporter>>()
+export const JaegerSimple = tag<SimpleProcessor<JaegerExporter>>()
 
-export const JaegerSimpleProcessor = SimpleTracingSpanProcessor(
-  JaegerSimpleProcessorTag,
+export const LiveJaegerSimple = SimpleProcessor(
+  JaegerSimple,
   makeJaegerTracingSpanExporter
 )

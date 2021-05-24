@@ -1,5 +1,5 @@
 {
-  "name": "@effect-ts/otel",
+  "name": "@effect-ts/otel-jaeger",
   "version": "0.0.0",
   "license": "MIT",
   "repository": "https://github.com/Effect-TS/otel.git",
@@ -27,17 +27,13 @@
   "sideEffects": false,
   "peerDependencies": {
     "@effect-ts/core": "^0.39.3",
-    "@opentelemetry/api": "^1.0.0-rc.3",
-    "@opentelemetry/core": "^0.19.0",
-    "@opentelemetry/tracing": "^0.19.0"
+    "@effect-ts/otel": "^0.0.0",
+    "@opentelemetry/exporter-jaeger": "^0.19.0"
+  },
+  "devDependencies": {
+    "@effect-ts/otel": "^0.0.0"
   },
   "config": {
-    "modules": [
-      "Processor",
-      "Processor/Simple",
-      "Span",
-      "Tracer",
-      "TracerProvider"
-    ]
+    "modules": []
   }
 }

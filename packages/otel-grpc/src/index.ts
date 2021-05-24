@@ -1,12 +1,13 @@
+// tracing: off
+
 import * as T from "@effect-ts/core/Effect"
 import * as L from "@effect-ts/core/Effect/Layer"
 import * as M from "@effect-ts/core/Effect/Managed"
 import { pipe } from "@effect-ts/core/Function"
 import { tag } from "@effect-ts/core/Has"
+import { SimpleProcessor } from "@effect-ts/otel"
 import { CollectorTraceExporter } from "@opentelemetry/exporter-collector-grpc"
 import type { CollectorExporterConfigNode } from "@opentelemetry/exporter-collector-grpc/build/src/types"
-
-import { SimpleTracingSpanProcessor } from "./tracer"
 
 export const GrpcTracingExporterConfigSymbol = Symbol()
 
@@ -58,10 +59,6 @@ export const makeGRPCTracingSpanExporter = M.gen(function* (_) {
   return spanExporter
 })
 
-export const GRPCSimpleProcessorTag =
-  tag<SimpleTracingSpanProcessor<CollectorTraceExporter>>()
+export const GRPCSimple = tag<SimpleProcessor<CollectorTraceExporter>>()
 
-export const GRPCSimpleProcessor = SimpleTracingSpanProcessor(
-  GRPCSimpleProcessorTag,
-  makeGRPCTracingSpanExporter
-)
+export const LiveGRPCSimple = SimpleProcessor(GRPCSimple, makeGRPCTracingSpanExporter)

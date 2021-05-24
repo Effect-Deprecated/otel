@@ -28,9 +28,19 @@
     "noImplicitAny": true,
     "noImplicitThis": true,
     "strictNullChecks": true,
-    "baseUrl": ".",
     "target": "ES2018",
-    "typeRoots": ["./node_modules/@types", "./typings"]
+    "typeRoots": ["./node_modules/@types", "./typings"],
+    "baseUrl": ".",
+    "paths": {
+      "@effect-ts/otel/*": ["packages/otel/build/*"],
+      "@effect-ts/otel": ["packages/otel/build"],
+      "@effect-ts/otel-node/*": ["packages/otel-node/build/*"],
+      "@effect-ts/otel-node": ["packages/otel-node/build"],
+      "@effect-ts/otel-jaeger/*": ["packages/otel-jaeger/build/*"],
+      "@effect-ts/otel-jaeger": ["packages/otel-jaeger/build"],
+      "@effect-ts/otel-grpc/*": ["packages/otel-grpc/build/*"],
+      "@effect-ts/otel-grpc": ["packages/otel-grpc/build"]
+    }
   },
   "exclude": ["node_modules", "build", "lib"]
 }
