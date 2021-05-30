@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/Effect-TS/otel/compare/@effect-ts/otel-jaeger@0.1.0...@effect-ts/otel-jaeger@0.2.0) (2021-05-30)
+
+**Note:** Version bump only for package @effect-ts/otel-jaeger
+
+
+
+
+
 # 0.1.0 (2021-05-24)
 
 

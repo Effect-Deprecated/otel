@@ -1,6 +1,6 @@
 {
   "name": "@effect-ts/otel-grpc",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "repository": "https://github.com/Effect-TS/otel.git",
   "homepage": "https://www.matechs.com",
@@ -30,7 +30,7 @@
     "@opentelemetry/exporter-collector-grpc": "^0.19.0"
   },
   "dependencies": {
-    "@effect-ts/otel": "^0.1.0"
+    "@effect-ts/otel": "^0.2.0"
   },
   "config": {
     "modules": []
