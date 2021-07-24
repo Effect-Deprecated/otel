@@ -1,5 +1,5 @@
 {
-  "name": "@effect-ts/otel-grpc",
+  "name": "@effect-ts/otel-exporter-collector-grpc",
   "version": "0.3.0",
   "license": "MIT",
   "repository": "https://github.com/Effect-TS/otel.git",

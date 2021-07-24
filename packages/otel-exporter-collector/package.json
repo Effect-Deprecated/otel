@@ -1,5 +1,5 @@
 {
-  "name": "@effect-ts/otel-jaeger",
+  "name": "@effect-ts/otel-exporter-collector",
   "version": "0.3.0",
   "license": "MIT",
   "repository": "https://github.com/Effect-TS/otel.git",
@@ -27,7 +27,7 @@
   "sideEffects": false,
   "peerDependencies": {
     "@effect-ts/core": "^0.40.8",
-    "@opentelemetry/exporter-jaeger": "^0.21.0"
+    "@opentelemetry/exporter-collector": "^0.21.0"
   },
   "dependencies": {
     "@effect-ts/otel": "^0.3.0"
