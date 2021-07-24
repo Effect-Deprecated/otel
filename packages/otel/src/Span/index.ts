@@ -7,7 +7,7 @@ import type { Has } from "@effect-ts/core/Has"
 import { tag } from "@effect-ts/core/Has"
 import * as O from "@effect-ts/core/Option"
 import type * as OTApi from "@opentelemetry/api"
-import { context, SpanOptions, trace } from "@opentelemetry/api"
+import { context, trace } from "@opentelemetry/api"
 
 import type { Tracer } from "../Tracer"
 import { withTracer } from "../Tracer"
@@ -24,8 +24,7 @@ export interface Span extends SpanImpl {}
 
 export const Span = tag<Span>()
 
-
-export function withSpan(name: string, options?: SpanOptions) {
+export function withSpan(name: string, options?: OTApi.SpanOptions) {
   return <R, E, A>(
     effect: T.Effect<R & Has<Span>, E, A>
   ): T.Effect<R & Has<Tracer>, E, A> => {
