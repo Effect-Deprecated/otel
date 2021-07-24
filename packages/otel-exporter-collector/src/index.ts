@@ -1,12 +1,12 @@
-import * as T from '@effect-ts/core/Effect'
-import * as L from '@effect-ts/core/Effect/Layer'
-import * as M from '@effect-ts/core/Effect/Managed'
-import { pipe } from '@effect-ts/core/Function'
-import type { Has } from '@effect-ts/core/Has'
-import { tag } from '@effect-ts/core/Has'
-import { SimpleProcessor } from '@effect-ts/otel'
-import { CollectorTraceExporter } from '@opentelemetry/exporter-collector'
-import type { CollectorExporterConfigBase } from '@opentelemetry/exporter-collector/build/src/types'
+import * as T from "@effect-ts/core/Effect"
+import * as L from "@effect-ts/core/Effect/Layer"
+import * as M from "@effect-ts/core/Effect/Managed"
+import { pipe } from "@effect-ts/core/Function"
+import type { Has } from "@effect-ts/core/Has"
+import { tag } from "@effect-ts/core/Has"
+import { SimpleProcessor } from "@effect-ts/otel"
+import { CollectorTraceExporter } from "@opentelemetry/exporter-collector"
+import type { CollectorExporterConfigBase } from "@opentelemetry/exporter-collector/build/src/types"
 
 export const CollectorTracingExporterConfigSymbol = Symbol()
 
@@ -18,18 +18,18 @@ export class CollectorTracingExporterConfig {
 export const CollectorTracingExporterConfigTag = tag<CollectorTracingExporterConfig>()
 
 export function collectorConfig(
-  config: CollectorExporterConfigBase,
+  config: CollectorExporterConfigBase
 ): L.Layer<unknown, never, Has<CollectorTracingExporterConfig>> {
   return L.fromEffect(CollectorTracingExporterConfigTag)(
-    T.succeedWith(() => new CollectorTracingExporterConfig(config)),
+    T.succeedWith(() => new CollectorTracingExporterConfig(config))
   ).setKey(CollectorTracingExporterConfigTag.key)
 }
 
 export function collectorConfigM<R, E>(
-  config: T.Effect<R, E, CollectorExporterConfigBase>,
+  config: T.Effect<R, E, CollectorExporterConfigBase>
 ): L.Layer<R, E, Has<CollectorTracingExporterConfig>> {
   return L.fromEffect(CollectorTracingExporterConfigTag)(
-    T.map_(config, (_) => new CollectorTracingExporterConfig(_)),
+    T.map_(config, (_) => new CollectorTracingExporterConfig(_))
   ).setKey(CollectorTracingExporterConfigTag.key)
 }
 
@@ -47,16 +47,16 @@ export const makeCollectorTracingSpanExporter = M.gen(function* (_) {
         T.gen(function* (_) {
           while (1) {
             yield* _(T.sleep(0))
-            const promises = p['_sendingPromises'] as any[]
+            const promises = p["_sendingPromises"] as any[]
             if (promises.length > 0) {
               yield* _(T.result(T.promise(() => Promise.all(promises))))
             } else {
               break
             }
           }
-        }),
-      ),
-    ),
+        })
+      )
+    )
   )
 
   return spanExporter
@@ -64,4 +64,7 @@ export const makeCollectorTracingSpanExporter = M.gen(function* (_) {
 
 export const CollectorSimple = tag<SimpleProcessor<CollectorTraceExporter>>()
 
-export const LiveCollectorSimple = SimpleProcessor(CollectorSimple, makeCollectorTracingSpanExporter)
+export const LiveCollectorSimple = SimpleProcessor(
+  CollectorSimple,
+  makeCollectorTracingSpanExporter
+)
