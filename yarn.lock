@@ -396,10 +396,10 @@
   resolved "https://registry.yarnpkg.com/@effect-ts/system/-/system-0.37.8.tgz#384cca7cf961e041301e5064938c697cd1422d21"
   integrity sha512-xRGfQSHdsUr4681iVBpgQwv04YLaufMteIZc16V+3xZkKyhFxrxY3In+QfPo4Wg9bOtwQBJdbJH+5RwhR+0Zrg==
 
-"@effect-ts/tracing-plugin@^0.11.6":
-  version "0.11.6"
-  resolved "https://registry.yarnpkg.com/@effect-ts/tracing-plugin/-/tracing-plugin-0.11.6.tgz#8893f506af01ba067db8532e5c60dfe36d1a6bbc"
-  integrity sha512-2fn4VheWxxeGjZoL4M+nGfUlFs6tSuJaWB1ktv4HX27nSwSO5qzNSNMxirdQHoQNJvMIyNLrMl8nYmXyXHfZfw==
+"@effect-ts/tracing-plugin@^0.14.0":
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/@effect-ts/tracing-plugin/-/tracing-plugin-0.14.0.tgz#81cb3eca4cd33bd2ddecacce9455b00e88bd9f74"
+  integrity sha512-0wxCTSaixBClpvoPxXjHgKR+KHo/pGD+3iduaGFWGHepmafpy41Axb4QJhocpaE/rSFL6aFVV+BBG0zAqR0O8Q==
 
 "@eslint/eslintrc@^0.4.2":
   version "0.4.2"
@@ -1769,9 +1769,9 @@
     "@types/node" "*"
 
 "@types/cpx@^1.5.1":
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/@types/cpx/-/cpx-1.5.1.tgz#b5fd05b4828622cc3cb14552fd1ee15d44355638"
-  integrity sha512-PVFRjClbYw22ckQR1OtjlQpg3ZqbSIIOq+/dbkqsIEYWmpZqL9OXLXTLUEhsYaST+1oNfx5c067aMqoXnAp8+w==
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@types/cpx/-/cpx-1.5.2.tgz#10f1ac2d27c8cf5f606575afdbcb45136388504a"
+  integrity sha512-CL9DbTAdf5NYcbYpBTli6JxVIpCAhJp1FeQiXd9SNjbC4o9k6McnHkU0FHgj9UYoN7TVX3poaaBrwFabTY7Skw==
   dependencies:
     "@types/node" "*"
 
@@ -8683,10 +8683,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@4.4.0-dev.20210625:
-  version "4.4.0-dev.20210625"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.0-dev.20210625.tgz#0a22fef024138ff6f2d9c660006a5cb6984307dd"
-  integrity sha512-ThG1wgNkWHH2vdXHOfT2docBIOFTEoRiLqyQIm+nfP9t9bS1Nd7Ze268vCXKhItdhIrUQ4scTRyw7xdiHEHo+A==
+typescript@4.4.0-insiders.20210805:
+  version "4.4.0-insiders.20210805"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.4.0-insiders.20210805.tgz#225a003c8bcad188069a29520a3bc9840ce0758e"
+  integrity sha512-pNeBoduMJYUs6Oatyew8OFNWunGXdatQHqUQJX3vy+kYwm39P+5QjiSVTXJhzc+PHnUCJGoJ9BN2bkdY4N9/4A==
 
 typescript@next:
   version "4.4.0-dev.20210530"
