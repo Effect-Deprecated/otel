@@ -6,7 +6,7 @@ import { pipe } from "@effect-ts/core/Function"
 import type { Has } from "@effect-ts/core/Has"
 import { tag } from "@effect-ts/core/Has"
 import * as O from "@effect-ts/core/Option"
-import type * as OTApi from "@opentelemetry/api"
+import * as OTApi from "@opentelemetry/api"
 import { context, trace } from "@opentelemetry/api"
 
 import type { Tracer } from "../Tracer"
@@ -48,6 +48,9 @@ export function withSpan(name: string, options?: OTApi.SpanOptions) {
             s.setAttribute("error.type", "Fiber Failure")
             s.setAttribute("error.message", "An Effect Has A Failure")
             s.setAttribute("error.stack", pretty(e.cause))
+            s.setStatus({ code: OTApi.SpanStatusCode.ERROR })
+          } else {
+            s.setStatus({ code: OTApi.SpanStatusCode.OK })
           }
           s.end()
         })
