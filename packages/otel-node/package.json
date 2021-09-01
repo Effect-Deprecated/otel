@@ -1,6 +1,6 @@
 {
   "name": "@effect-ts/otel-node",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "license": "MIT",
   "repository": "https://github.com/Effect-TS/otel.git",
   "homepage": "https://www.matechs.com",
@@ -30,7 +30,7 @@
     "@opentelemetry/node": "^0.21.0"
   },
   "dependencies": {
-    "@effect-ts/otel": "^0.4.0"
+    "@effect-ts/otel": "^0.5.0"
   },
   "config": {
     "modules": []

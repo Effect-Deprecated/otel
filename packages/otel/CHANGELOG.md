@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/Effect-TS/otel/compare/@effect-ts/otel@0.4.0...@effect-ts/otel@0.5.0) (2021-09-01)
+
+
+### Features
+
+* add span status (for both success and error) ([4517ea4](https://github.com/Effect-TS/otel/commit/4517ea4f3ff96ec9a5815b1fab0e66ea3d105ebe))
+
+
+
+
+
 # [0.4.0](https://github.com/Effect-TS/otel/compare/@effect-ts/otel@0.3.0...@effect-ts/otel@0.4.0) (2021-07-24)
 
 
