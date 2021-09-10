@@ -1,4 +1,4 @@
-// tracing: off
+// ets_tracing: off
 
 import * as T from "@effect-ts/core/Effect"
 import { pretty } from "@effect-ts/core/Effect/Cause"
