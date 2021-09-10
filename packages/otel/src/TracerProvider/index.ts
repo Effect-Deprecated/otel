@@ -1,10 +1,10 @@
-// tracing: off
+// ets_tracing: off
 
 import { tag } from "@effect-ts/core/Has"
 import type { BasicTracerProvider } from "@opentelemetry/tracing"
 
 //
-// Tracing Provider
+// ets_tracing Provider
 //
 
 export const TracerProviderSymbol = Symbol()

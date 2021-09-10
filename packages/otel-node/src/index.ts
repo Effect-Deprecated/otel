@@ -1,4 +1,4 @@
-// tracing: off
+// ets_tracing: off
 
 import { pipe } from "@effect-ts/core"
 import * as T from "@effect-ts/core/Effect"
