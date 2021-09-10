@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/Effect-TS/otel/compare/@effect-ts/otel-node@0.5.1...@effect-ts/otel-node@0.5.2) (2021-09-10)
+
+**Note:** Version bump only for package @effect-ts/otel-node
+
+
+
+
+
 ## [0.5.1](https://github.com/Effect-TS/otel/compare/@effect-ts/otel-node@0.5.0...@effect-ts/otel-node@0.5.1) (2021-09-10)
 
 **Note:** Version bump only for package @effect-ts/otel-node
