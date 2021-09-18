@@ -26,8 +26,8 @@
   },
   "sideEffects": false,
   "peerDependencies": {
-    "@effect-ts/core": "^0.40.8",
-    "@opentelemetry/exporter-jaeger": "^0.21.0"
+    "@effect-ts/core": "^0.44.0",
+    "@opentelemetry/exporter-jaeger": "^0.24.0"
   },
   "dependencies": {
     "@effect-ts/otel": "^0.5.2"

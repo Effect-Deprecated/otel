@@ -26,10 +26,10 @@
   },
   "sideEffects": false,
   "peerDependencies": {
-    "@effect-ts/core": "^0.40.8",
-    "@opentelemetry/api": "^0.21.0",
-    "@opentelemetry/core": "^0.21.0",
-    "@opentelemetry/tracing": "^0.21.0"
+    "@effect-ts/core": "^0.44.0",
+    "@opentelemetry/api": "^1.0.0",
+    "@opentelemetry/core": "^0.24.0",
+    "@opentelemetry/tracing": "^0.24.0"
   },
   "config": {
     "modules": [
