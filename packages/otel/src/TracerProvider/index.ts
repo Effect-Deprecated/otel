@@ -1,7 +1,7 @@
 // ets_tracing: off
 
 import { tag } from "@effect-ts/core/Has"
-import type { BasicTracerProvider } from "@opentelemetry/tracing"
+import type { BasicTracerProvider } from "@opentelemetry/sdk-trace-base"
 
 //
 // ets_tracing Provider

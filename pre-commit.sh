@@ -1,10 +1,10 @@
 #!/bin/sh
-if yarn yarn-deduplicate -fl; then
+if yarn dedupe --check; then
     echo "No duplicates found. Pursuing..."
 else
     echo "ERROR: Lockfile contains duplicates!"
     echo "deduplicating..."
-    yarn yarn-deduplicate
+    yarn dedupe
     yarn
     echo "deduplication finished"
     exit 1

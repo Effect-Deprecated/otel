@@ -8,8 +8,8 @@ import { identity } from "@effect-ts/core/Function"
 import { tag } from "@effect-ts/core/Has"
 import * as O from "@effect-ts/core/Option"
 import * as OT from "@effect-ts/otel"
-import type { NodeTracerConfig } from "@opentelemetry/node"
-import { NodeTracerProvider } from "@opentelemetry/node"
+import type { NodeTracerConfig } from "@opentelemetry/sdk-trace-node"
+import { NodeTracerProvider } from "@opentelemetry/sdk-trace-node"
 
 export interface NodeTracerProviderConfig {
   readonly config: NodeTracerConfig
