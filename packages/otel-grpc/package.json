@@ -32,7 +32,7 @@
     "@opentelemetry/sdk-trace-base": "^1.0.0"
   },
   "dependencies": {
-    "@effect-ts/otel": "^0.5.4-alpha.0"
+    "@effect-ts/otel": "^0.6.0-alpha.0"
   },
   "config": {
     "modules": []
