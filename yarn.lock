@@ -562,7 +562,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@effect-ts/otel-grpc@workspace:packages/otel-grpc"
   dependencies:
-    "@effect-ts/otel": ^0.5.4-alpha.0
+    "@effect-ts/otel": ^0.6.1-alpha.0
   peerDependencies:
     "@effect-ts/core": ^0.44.0
     "@opentelemetry/api": ^1.0.0
@@ -576,7 +576,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@effect-ts/otel-jaeger@workspace:packages/otel-jaeger"
   dependencies:
-    "@effect-ts/otel": ^0.5.4-alpha.0
+    "@effect-ts/otel": ^0.6.1-alpha.0
   peerDependencies:
     "@effect-ts/core": ^0.44.0
     "@opentelemetry/api": ^1.0.0
@@ -591,7 +591,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@effect-ts/otel-node@workspace:packages/otel-node"
   dependencies:
-    "@effect-ts/otel": ^0.5.4-alpha.0
+    "@effect-ts/otel": ^0.6.1-alpha.0
   peerDependencies:
     "@effect-ts/core": ^0.44.0
     "@opentelemetry/api": ^1.0.0
@@ -602,7 +602,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@effect-ts/otel@^0.5.4-alpha.0, @effect-ts/otel@workspace:packages/otel":
+"@effect-ts/otel@^0.6.1-alpha.0, @effect-ts/otel@workspace:packages/otel":
   version: 0.0.0-use.local
   resolution: "@effect-ts/otel@workspace:packages/otel"
   peerDependencies:
