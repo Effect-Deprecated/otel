@@ -6,7 +6,7 @@ import * as M from "@effect-ts/core/Effect/Managed"
 import { identity } from "@effect-ts/core/Function"
 import type { Has } from "@effect-ts/core/Has"
 import { tag } from "@effect-ts/core/Has"
-import type * as OTTracing from "@opentelemetry/tracing"
+import type * as OTTracing from "@opentelemetry/sdk-trace-base"
 
 import { TracerProvider } from "../TracerProvider"
 

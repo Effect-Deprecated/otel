@@ -6,8 +6,8 @@ import { tag } from "@effect-ts/core/Has"
 import { AtomicReference } from "@effect-ts/core/Support/AtomicReference"
 import type { _A } from "@effect-ts/core/Utils"
 import { ExportResultCode } from "@opentelemetry/core"
-import { NodeTracerProvider } from "@opentelemetry/node"
-import type { ReadableSpan, SpanExporter } from "@opentelemetry/tracing"
+import { NodeTracerProvider } from "@opentelemetry/sdk-trace-node"
+import type { ReadableSpan, SpanExporter } from "@opentelemetry/sdk-trace-base"
 
 import * as OT from "../../src"
 

@@ -6,8 +6,8 @@ import * as M from "@effect-ts/core/Effect/Managed"
 import { identity } from "@effect-ts/core/Function"
 import type { Tag } from "@effect-ts/core/Has"
 import { tag } from "@effect-ts/core/Has"
-import type { SpanExporter } from "@opentelemetry/tracing"
-import { ConsoleSpanExporter, SimpleSpanProcessor } from "@opentelemetry/tracing"
+import type { SpanExporter } from "@opentelemetry/sdk-trace-base"
+import { ConsoleSpanExporter, SimpleSpanProcessor } from "@opentelemetry/sdk-trace-base"
 
 import { TracerProvider } from "../../TracerProvider"
 
