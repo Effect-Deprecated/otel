@@ -564,7 +564,7 @@ __metadata:
   dependencies:
     "@effect-ts/otel": ^0.7.0
   peerDependencies:
-    "@effect-ts/core": ^0.44.0
+    "@effect-ts/core": ^0.44.0 || ^0.45.0
     "@opentelemetry/api": ^1.0.0
     "@opentelemetry/core": ^1.0.0
     "@opentelemetry/exporter-collector-grpc": ^0.25.0
@@ -578,7 +578,7 @@ __metadata:
   dependencies:
     "@effect-ts/otel": ^0.7.0
   peerDependencies:
-    "@effect-ts/core": ^0.44.0
+    "@effect-ts/core": ^0.44.0 || ^0.45.0
     "@opentelemetry/api": ^1.0.0
     "@opentelemetry/core": ^1.0.0
     "@opentelemetry/exporter-collector-grpc": ^0.25.0
@@ -593,7 +593,7 @@ __metadata:
   dependencies:
     "@effect-ts/otel": ^0.7.0
   peerDependencies:
-    "@effect-ts/core": ^0.44.0
+    "@effect-ts/core": ^0.44.0 || ^0.45.0
     "@opentelemetry/api": ^1.0.0
     "@opentelemetry/core": ^1.0.0
     "@opentelemetry/exporter-collector-grpc": ^0.25.0
@@ -606,7 +606,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@effect-ts/otel@workspace:packages/otel"
   peerDependencies:
-    "@effect-ts/core": ^0.44.0
+    "@effect-ts/core": ^0.44.0 || ^0.45.0
     "@opentelemetry/api": ^1.0.0
     "@opentelemetry/core": ^1.0.0
     "@opentelemetry/sdk-trace-base": ^1.0.0
@@ -651,13 +651,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@grpc/grpc-js@npm:^1.3.7, @grpc/grpc-js@npm:^1.4.3":
-  version: 1.4.3
-  resolution: "@grpc/grpc-js@npm:1.4.3"
+"@grpc/grpc-js@npm:^1.3.7, @grpc/grpc-js@npm:^1.4.4":
+  version: 1.4.4
+  resolution: "@grpc/grpc-js@npm:1.4.4"
   dependencies:
     "@grpc/proto-loader": ^0.6.4
     "@types/node": ">=12.12.47"
-  checksum: 46925c732397dcbe07baa675ceb5c08d4ebf901fd5f54d859d439c86c167dfc5f4dc2f6b9506d1f19fe7c289a1d60af439a972366301818b674eb1e17ac38025
+  checksum: f9be710ceff8e14865718dbead97c85f3457889ae01c4d94f1338bb19dfe19c92549046b3ea2f0df31360363c39322031dfff0189df5798e7b8452016afcce6e
   languageName: node
   linkType: hard
 
@@ -2645,13 +2645,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@yarnpkg/lockfile@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@yarnpkg/lockfile@npm:1.1.0"
-  checksum: 05b881b4866a3546861fee756e6d3812776ea47fa6eb7098f983d6d0eefa02e12b66c3fff931574120f196286a7ad4879ce02743c8bb2be36c6a576c7852083a
-  languageName: node
-  linkType: hard
-
 "JSONStream@npm:^1.0.4":
   version: 1.3.5
   resolution: "JSONStream@npm:1.3.5"
@@ -3869,13 +3862,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^6.1.0":
-  version: 6.2.1
-  resolution: "commander@npm:6.2.1"
-  checksum: d7090410c0de6bc5c67d3ca41c41760d6d268f3c799e530aafb73b7437d1826bbf0d2a3edac33f8b57cc9887b4a986dce307fa5557e109be40eadb7c43b21742
-  languageName: node
-  linkType: hard
-
 "commitizen@npm:^4.0.3":
   version: 4.2.4
   resolution: "commitizen@npm:4.2.4"
@@ -4575,7 +4561,7 @@ __metadata:
     "@effect-ts/jest": ^0.31.0
     "@effect-ts/node": ^0.30.0
     "@effect-ts/tracing-plugin": ^0.14.18
-    "@grpc/grpc-js": ^1.4.3
+    "@grpc/grpc-js": ^1.4.4
     "@opentelemetry/api": ^1.0.3
     "@opentelemetry/core": ^1.0.0
     "@opentelemetry/exporter-collector-grpc": ^0.25.0
@@ -4615,7 +4601,6 @@ __metadata:
     ttypescript: ^1.5.12
     typescript: 4.4.4
     ultra-runner: ^3.10.5
-    yarn-deduplicate: ^3.0.0
   languageName: unknown
   linkType: soft
 
@@ -12056,19 +12041,6 @@ typescript@next:
     window-size: ^0.1.4
     y18n: ^3.2.0
   checksum: 3e0f7fc1bc2052bcaaa7354cbd33d05a86fc0f236432d107ecd088989fbd175174c562d17e762727acbf25d04e8520d43625f7581b2a6ce55ce10034e80675fc
-  languageName: node
-  linkType: hard
-
-"yarn-deduplicate@npm:^3.0.0":
-  version: 3.1.0
-  resolution: "yarn-deduplicate@npm:3.1.0"
-  dependencies:
-    "@yarnpkg/lockfile": ^1.1.0
-    commander: ^6.1.0
-    semver: ^7.3.2
-  bin:
-    yarn-deduplicate: cli.js
-  checksum: 780d4b6df85a7baf59b9b850162a4306ead0597fab6d344f98a67d417bca7e8ba0a021e4f6bdd2923d4c940079b7e39720886a988a9cdef578df95697432b7b6
   languageName: node
   linkType: hard
 
