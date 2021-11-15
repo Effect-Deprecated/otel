@@ -6,25 +6,25 @@ import * as M from "@effect-ts/core/Effect/Managed"
 import { pipe } from "@effect-ts/core/Function"
 import { tag } from "@effect-ts/core/Has"
 import { SimpleProcessor } from "@effect-ts/otel"
-import { CollectorTraceExporter } from "@opentelemetry/exporter-collector-grpc"
-import type { CollectorExporterConfigNode } from "@opentelemetry/exporter-collector-grpc/build/src/types"
+import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-grpc"
+import type { OTLPExporterConfigNode } from "@opentelemetry/exporter-trace-otlp-grpc/build/src/types"
 
 export const GrpcTracingExporterConfigSymbol = Symbol()
 
 export class GrpcTracingExporterConfig {
   readonly [GrpcTracingExporterConfigSymbol] = GrpcTracingExporterConfigSymbol
-  constructor(readonly config: CollectorExporterConfigNode) {}
+  constructor(readonly config: OTLPExporterConfigNode) {}
 }
 
 export const GrpcTracingExporterConfigTag = tag<GrpcTracingExporterConfig>()
 
-export function grpcConfig(config: CollectorExporterConfigNode) {
+export function grpcConfig(config: OTLPExporterConfigNode) {
   return L.fromEffect(GrpcTracingExporterConfigTag)(
     T.succeedWith(() => new GrpcTracingExporterConfig(config))
   ).setKey(GrpcTracingExporterConfigTag.key)
 }
 
-export function grpcConfigM<R, E>(config: T.Effect<R, E, CollectorExporterConfigNode>) {
+export function grpcConfigM<R, E>(config: T.Effect<R, E, OTLPExporterConfigNode>) {
   return L.fromEffect(GrpcTracingExporterConfigTag)(
     T.map_(config, (_) => new GrpcTracingExporterConfig(_))
   ).setKey(GrpcTracingExporterConfigTag.key)
@@ -35,7 +35,7 @@ export const makeGRPCTracingSpanExporter = M.gen(function* (_) {
 
   const spanExporter = yield* _(
     pipe(
-      T.succeedWith(() => new CollectorTraceExporter(config)),
+      T.succeedWith(() => new OTLPTraceExporter(config)),
       // NOTE Unfortunately this workaround/"hack" is currently needed since Otel doesn't yet provide a graceful
       // way to shutdown.
       //
@@ -59,6 +59,6 @@ export const makeGRPCTracingSpanExporter = M.gen(function* (_) {
   return spanExporter
 })
 
-export const GRPCSimple = tag<SimpleProcessor<CollectorTraceExporter>>()
+export const GRPCSimple = tag<SimpleProcessor<OTLPTraceExporter>>()
 
 export const LiveGRPCSimple = SimpleProcessor(GRPCSimple, makeGRPCTracingSpanExporter)
