@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.8.0 (2021-11-20)
+
+**Note:** Version bump only for package @effect-ts/otel-sdk-trace-node
+
+
+
+
+
 # [0.8.0-alpha.1](https://github.com/Effect-TS/otel/compare/@effect-ts/otel-sdk-trace-node@0.9.0-alpha.0...@effect-ts/otel-sdk-trace-node@0.8.0-alpha.1) (2021-11-20)
 
 **Note:** Version bump only for package @effect-ts/otel-sdk-trace-node
