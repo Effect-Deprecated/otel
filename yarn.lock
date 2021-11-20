@@ -575,9 +575,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@effect-ts/otel-exporter-trace-otlp-http@workspace:packages/otel-exporter-trace-otlp-grpc":
+"@effect-ts/otel-exporter-trace-otlp-grpc@workspace:packages/otel-exporter-trace-otlp-grpc":
   version: 0.0.0-use.local
-  resolution: "@effect-ts/otel-exporter-trace-otlp-http@workspace:packages/otel-exporter-trace-otlp-grpc"
+  resolution: "@effect-ts/otel-exporter-trace-otlp-grpc@workspace:packages/otel-exporter-trace-otlp-grpc"
   dependencies:
     "@effect-ts/otel": ^0.8.0-alpha.0
     "@opentelemetry/exporter-trace-otlp-grpc": 0.27.0
