@@ -4,7 +4,7 @@ import * as T from "@effect-ts/core/Effect"
 import * as L from "@effect-ts/core/Effect/Layer"
 import * as M from "@effect-ts/core/Effect/Managed"
 import { identity } from "@effect-ts/core/Function"
-import type { Service, Tag } from "@effect-ts/core/Has"
+import type { Service } from "@effect-ts/core/Has"
 import { tag } from "@effect-ts/core/Has"
 import type { SpanExporter } from "@opentelemetry/sdk-trace-base"
 import { ConsoleSpanExporter, SimpleSpanProcessor } from "@opentelemetry/sdk-trace-base"
@@ -17,9 +17,8 @@ import { TracerProvider } from "../../TracerProvider"
 
 export const SimpleProcessorServiceId = Symbol()
 
-// TODO PR
-export interface SimpleProcessor<A extends SpanExporter> extends Service<typeof SimpleProcessorServiceId> {
-  readonly spanExporter: A
+export interface SimpleProcessor extends Service<typeof SimpleProcessorServiceId> {
+  readonly spanExporter: SpanExporter
   readonly spanProcessor: SimpleSpanProcessor
 }
 
@@ -37,23 +36,21 @@ export const makeSimpleProcessor = <R, E, A extends SpanExporter>(
 
     yield* _(T.succeedWith(() => tracerProvider.addSpanProcessor(spanProcessor)))
 
-    return identity<SimpleProcessor<A>>({
-      [SimpleProcessorServiceId]: SimpleProcessorServiceId,
+    return identity<SimpleProcessor>({
+      serviceId: SimpleProcessorServiceId,
       spanExporter,
       spanProcessor
     })
   })
 
+export const SimpleProcessorTag = tag<SimpleProcessor>(SimpleProcessorServiceId)
+
 export function SimpleProcessor<R, E, A extends SpanExporter>(
-  tag: Tag<SimpleProcessor<A>>,
   exporter: M.Managed<R, E, A>
 ) {
-  return L.fromManaged(tag)(makeSimpleProcessor(exporter))
+  return L.fromManaged(SimpleProcessorTag)(makeSimpleProcessor(exporter))
 }
 
-export const ConsoleSimpleTag = tag<SimpleProcessor<ConsoleSpanExporter>>(SimpleProcessorServiceId)
-
 export const LiveConsoleSimple = SimpleProcessor(
-  ConsoleSimpleTag,
   M.succeedWith(() => new ConsoleSpanExporter())
 )

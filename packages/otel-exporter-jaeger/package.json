@@ -1,13 +1,13 @@
 {
-  "name": "@effect-ts/otel-grpc",
+  "name": "@effect-ts/otel-exporter-jaeger",
   "version": "0.7.2",
   "license": "MIT",
   "repository": "https://github.com/Effect-TS/otel.git",
   "homepage": "https://www.matechs.com",
   "scripts": {
     "clean": "rimraf build tsbuildinfo",
-    "build:lib": "ttsc --build  tsconfig.build.json && build-utils package",
-    "build:es6": "ttsc --build  tsconfig.es6.json && babel build/esm/ -d build/esm/ -s --plugins annotate-pure-calls && build-utils package-esm",
+    "build:lib": "tsc --build  tsconfig.build.json && build-utils package",
+    "build:es6": "tsc --build  tsconfig.es6.json && babel build/esm/ -d build/esm/ -s --plugins annotate-pure-calls && build-utils package-esm",
     "build:post-process": "build-utils rewrite-source-maps && build-utils rewrite-locals && yarn prettier:lib",
     "build": "yarn run build:lib && yarn run build:es6 && yarn run build:post-process",
     "lint": "eslint . --ext .ts,.tsx",
@@ -15,9 +15,9 @@
     "prettier": "prettier --write \"./{src,test,demo}/**/*.ts\"",
     "prettier:lib": "prettier --write \"./build/**/*.js\"",
     "tc": "tsc --noEmit",
-    "demo": "ts-node --compiler ttypescript --project tsconfig.build.json -r tsconfig-paths/register -r @effect-ts/system/Tracing/Enable",
+    "demo": "ts-node --project tsconfig.build.json -r tsconfig-paths/register -r @effect-ts/system/Tracing/Enable",
     "circular": "madge --circular --ts-config ./tsconfig.build.json --extensions ts ./src",
-    "debug": "ttsc -p tsconfig.debug.json"
+    "debug": "tsc -p tsconfig.debug.json"
   },
   "publishConfig": {
     "access": "public",
@@ -25,17 +25,17 @@
   },
   "sideEffects": false,
   "peerDependencies": {
-    "@effect-ts/core": "^0.44.0 || ^0.45.0",
+    "@effect-ts/core": "^0.46.4",
     "@opentelemetry/api": "^1.0.0",
     "@opentelemetry/core": "^1.0.0",
-    "@opentelemetry/exporter-trace-otlp-grpc": "^0.25.0",
+    "@opentelemetry/exporter-jaeger": "^1.0.0",
     "@opentelemetry/sdk-trace-base": "^1.0.0"
   },
   "dependencies": {
     "@effect-ts/otel": "^0.7.2"
   },
   "devDependencies": {
-    "@opentelemetry/exporter-trace-otlp-grpc": "0.27.0"
+    "@opentelemetry/exporter-jaeger": "1.0.1"
   },
   "config": {
     "modules": []

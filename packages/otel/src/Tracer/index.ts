@@ -26,11 +26,7 @@ export const makeTracer = (name: string) =>
 
     const tracer = yield* _(T.succeedWith(() => tracerProvider.getTracer(name)))
 
-    // TODO PR
-    return identity<Tracer>({
-      [TracerServiceId]: TracerServiceId,
-      tracer
-    })
+    return identity<Tracer>({ serviceId: TracerServiceId, tracer })
   })
 
 export const LiveTracer = L.fromManaged(Tracer)(makeTracer("@effect-ts/otel/Tracer"))

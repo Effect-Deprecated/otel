@@ -11,13 +11,17 @@ import type { OTLPExporterConfigNode } from "@opentelemetry/exporter-trace-otlp-
 
 export const GrpcTracingExporterConfigServiceId = Symbol()
 
-export class GrpcTracingExporterConfig extends BaseService(GrpcTracingExporterConfigServiceId) {
+export class GrpcTracingExporterConfig extends BaseService(
+  GrpcTracingExporterConfigServiceId
+) {
   constructor(readonly config: OTLPExporterConfigNode) {
     super()
   }
 }
 
-export const GrpcTracingExporterConfigTag = tag<GrpcTracingExporterConfig>(GrpcTracingExporterConfigServiceId)
+export const GrpcTracingExporterConfigTag = tag<GrpcTracingExporterConfig>(
+  GrpcTracingExporterConfigServiceId
+)
 
 export function grpcConfig(config: OTLPExporterConfigNode) {
   return L.fromEffect(GrpcTracingExporterConfigTag)(
@@ -60,7 +64,4 @@ export const makeGRPCTracingSpanExporter = M.gen(function* (_) {
   return spanExporter
 })
 
-// TODO PR
-export const GRPCSimple = tag<SimpleProcessor<OTLPTraceExporter>>()
-
-export const LiveGRPCSimple = SimpleProcessor(GRPCSimple, makeGRPCTracingSpanExporter)
+export const LiveGRPCSimple = SimpleProcessor(makeGRPCTracingSpanExporter)
