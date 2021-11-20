@@ -9,34 +9,34 @@ import { SimpleProcessor } from "@effect-ts/otel"
 import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-grpc"
 import type { OTLPExporterConfigNode } from "@opentelemetry/exporter-trace-otlp-grpc/build/src/types"
 
-export const GrpcTracingExporterConfigServiceId = Symbol()
+export const OTLPTraceExporterConfigServiceId = Symbol()
 
-export class GrpcTracingExporterConfig extends BaseService(
-  GrpcTracingExporterConfigServiceId
+export class OTLPTraceExporterConfig extends BaseService(
+  OTLPTraceExporterConfigServiceId
 ) {
   constructor(readonly config: OTLPExporterConfigNode) {
     super()
   }
 }
 
-export const GrpcTracingExporterConfigTag = tag<GrpcTracingExporterConfig>(
-  GrpcTracingExporterConfigServiceId
+export const OTLPTraceExporterConfigTag = tag<OTLPTraceExporterConfig>(
+  OTLPTraceExporterConfigServiceId
 )
 
-export function grpcConfig(config: OTLPExporterConfigNode) {
-  return L.fromEffect(GrpcTracingExporterConfigTag)(
-    T.succeedWith(() => new GrpcTracingExporterConfig(config))
-  ).setKey(GrpcTracingExporterConfigTag.key)
-}
+export const makeOTLPTraceExporterConfigLayer = (config: OTLPExporterConfigNode) =>
+  L.fromEffect(OTLPTraceExporterConfigTag)(
+    T.succeedWith(() => new OTLPTraceExporterConfig(config))
+  ).setKey(OTLPTraceExporterConfigTag.key)
 
-export function grpcConfigM<R, E>(config: T.Effect<R, E, OTLPExporterConfigNode>) {
-  return L.fromEffect(GrpcTracingExporterConfigTag)(
-    T.map_(config, (_) => new GrpcTracingExporterConfig(_))
-  ).setKey(GrpcTracingExporterConfigTag.key)
-}
+export const makeOTLPTraceExporterConfigLayerM = <R, E>(
+  config: T.Effect<R, E, OTLPExporterConfigNode>
+) =>
+  L.fromEffect(OTLPTraceExporterConfigTag)(
+    T.map_(config, (_) => new OTLPTraceExporterConfig(_))
+  ).setKey(OTLPTraceExporterConfigTag.key)
 
-export const makeGRPCTracingSpanExporter = M.gen(function* (_) {
-  const { config } = yield* _(GrpcTracingExporterConfigTag)
+export const makeTracingSpanExporter = M.gen(function* (_) {
+  const { config } = yield* _(OTLPTraceExporterConfigTag)
 
   const spanExporter = yield* _(
     pipe(
@@ -64,4 +64,4 @@ export const makeGRPCTracingSpanExporter = M.gen(function* (_) {
   return spanExporter
 })
 
-export const LiveGRPCSimple = SimpleProcessor(makeGRPCTracingSpanExporter)
+export const LiveSimpleProcessor = SimpleProcessor(makeTracingSpanExporter)

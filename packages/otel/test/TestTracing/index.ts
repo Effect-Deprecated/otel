@@ -14,8 +14,6 @@ import * as OT from "../../src"
 export const makeNodeTracingProvider = M.gen(function* (_) {
   const tracerProvider = yield* _(T.succeedWith(() => new NodeTracerProvider()))
 
-  yield* _(T.succeedWith(() => tracerProvider.register()))
-
   return identity<OT.TracerProvider>({
     serviceId: OT.TracerProviderServiceId,
     tracerProvider
