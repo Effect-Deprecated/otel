@@ -2,19 +2,20 @@ import * as T from "@effect-ts/core/Effect"
 import * as L from "@effect-ts/core/Effect/Layer"
 import * as M from "@effect-ts/core/Effect/Managed"
 import { pipe } from "@effect-ts/core/Function"
-import { tag } from "@effect-ts/core/Has"
+import { BaseService, tag } from "@effect-ts/core/Has"
 import { SimpleProcessor } from "@effect-ts/otel"
 import type { ExporterConfig } from "@opentelemetry/exporter-jaeger"
 import { JaegerExporter } from "@opentelemetry/exporter-jaeger"
 
-export const JaegerTracingExporterConfigSymbol = Symbol()
+export const JaegerTracingExporterConfigServiceId = Symbol()
 
-export class JaegerTracingExporterConfig {
-  readonly [JaegerTracingExporterConfigSymbol] = JaegerTracingExporterConfigSymbol
-  constructor(readonly config: ExporterConfig) {}
+export class JaegerTracingExporterConfig extends BaseService(JaegerTracingExporterConfigServiceId) {
+  constructor(readonly config: ExporterConfig) {
+    super()
+  }
 }
 
-export const JaegerTracingExporterConfigTag = tag<JaegerTracingExporterConfig>()
+export const JaegerTracingExporterConfigTag = tag<JaegerTracingExporterConfig>(JaegerTracingExporterConfigServiceId)
 
 export function jaegerConfig(config: ExporterConfig) {
   return L.fromEffect(JaegerTracingExporterConfigTag)(
@@ -57,6 +58,7 @@ export const makeJaegerTracingSpanExporter = M.gen(function* (_) {
   return spanExporter
 })
 
+// TODO PR
 export const JaegerSimple = tag<SimpleProcessor<JaegerExporter>>()
 
 export const LiveJaegerSimple = SimpleProcessor(

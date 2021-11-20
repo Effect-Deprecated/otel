@@ -4,19 +4,20 @@ import * as T from "@effect-ts/core/Effect"
 import * as L from "@effect-ts/core/Effect/Layer"
 import * as M from "@effect-ts/core/Effect/Managed"
 import { pipe } from "@effect-ts/core/Function"
-import { tag } from "@effect-ts/core/Has"
+import { BaseService, tag } from "@effect-ts/core/Has"
 import { SimpleProcessor } from "@effect-ts/otel"
 import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-grpc"
 import type { OTLPExporterConfigNode } from "@opentelemetry/exporter-trace-otlp-grpc/build/src/types"
 
-export const GrpcTracingExporterConfigSymbol = Symbol()
+export const GrpcTracingExporterConfigServiceId = Symbol()
 
-export class GrpcTracingExporterConfig {
-  readonly [GrpcTracingExporterConfigSymbol] = GrpcTracingExporterConfigSymbol
-  constructor(readonly config: OTLPExporterConfigNode) {}
+export class GrpcTracingExporterConfig extends BaseService(GrpcTracingExporterConfigServiceId) {
+  constructor(readonly config: OTLPExporterConfigNode) {
+    super()
+  }
 }
 
-export const GrpcTracingExporterConfigTag = tag<GrpcTracingExporterConfig>()
+export const GrpcTracingExporterConfigTag = tag<GrpcTracingExporterConfig>(GrpcTracingExporterConfigServiceId)
 
 export function grpcConfig(config: OTLPExporterConfigNode) {
   return L.fromEffect(GrpcTracingExporterConfigTag)(
@@ -59,6 +60,7 @@ export const makeGRPCTracingSpanExporter = M.gen(function* (_) {
   return spanExporter
 })
 
+// TODO PR
 export const GRPCSimple = tag<SimpleProcessor<OTLPTraceExporter>>()
 
 export const LiveGRPCSimple = SimpleProcessor(GRPCSimple, makeGRPCTracingSpanExporter)

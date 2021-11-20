@@ -1,18 +1,16 @@
 // ets_tracing: off
 
-import { tag } from "@effect-ts/core/Has"
+import { Service, tag } from "@effect-ts/core/Has"
 import type { BasicTracerProvider } from "@opentelemetry/sdk-trace-base"
 
 //
 // ets_tracing Provider
 //
 
-export const TracerProviderSymbol = Symbol()
-export type TracerProviderSymbol = typeof TracerProviderSymbol
+export const TracerProviderServiceId = Symbol()
 
-export interface TracerProvider {
-  readonly [TracerProviderSymbol]: TracerProviderSymbol
+export interface TracerProvider extends Service<typeof TracerProviderServiceId> {
   readonly tracerProvider: BasicTracerProvider
 }
 
-export const TracerProvider = tag<TracerProvider>()
+export const TracerProvider = tag<TracerProvider>(TracerProviderServiceId)
