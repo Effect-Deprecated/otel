@@ -9,13 +9,17 @@ import { JaegerExporter } from "@opentelemetry/exporter-jaeger"
 
 export const JaegerTracingExporterConfigServiceId = Symbol()
 
-export class JaegerTracingExporterConfig extends BaseService(JaegerTracingExporterConfigServiceId) {
+export class JaegerTracingExporterConfig extends BaseService(
+  JaegerTracingExporterConfigServiceId
+) {
   constructor(readonly config: ExporterConfig) {
     super()
   }
 }
 
-export const JaegerTracingExporterConfigTag = tag<JaegerTracingExporterConfig>(JaegerTracingExporterConfigServiceId)
+export const JaegerTracingExporterConfigTag = tag<JaegerTracingExporterConfig>(
+  JaegerTracingExporterConfigServiceId
+)
 
 export function jaegerConfig(config: ExporterConfig) {
   return L.fromEffect(JaegerTracingExporterConfigTag)(
@@ -58,10 +62,4 @@ export const makeJaegerTracingSpanExporter = M.gen(function* (_) {
   return spanExporter
 })
 
-// TODO PR
-export const JaegerSimple = tag<SimpleProcessor<JaegerExporter>>()
-
-export const LiveJaegerSimple = SimpleProcessor(
-  JaegerSimple,
-  makeJaegerTracingSpanExporter
-)
+export const LiveJaegerSimple = SimpleProcessor(makeJaegerTracingSpanExporter)
