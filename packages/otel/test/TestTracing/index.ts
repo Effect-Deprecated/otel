@@ -15,7 +15,7 @@ export const makeNodeTracingProvider = M.gen(function* (_) {
   const tracerProvider = yield* _(T.succeedWith(() => new NodeTracerProvider()))
 
   return identity<OT.TracerProvider>({
-    serviceId: OT.TracerProviderSymbol,
+    [OT.TracerProviderSymbol]: OT.TracerProviderSymbol,
     tracerProvider
   })
 })
