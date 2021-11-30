@@ -2,23 +2,20 @@ import * as T from "@effect-ts/core/Effect"
 import * as L from "@effect-ts/core/Effect/Layer"
 import * as M from "@effect-ts/core/Effect/Managed"
 import { pipe } from "@effect-ts/core/Function"
-import { BaseService, tag } from "@effect-ts/core/Has"
+import { tag } from "@effect-ts/core/Has"
 import { SimpleProcessor } from "@effect-ts/otel"
 import type { ExporterConfig } from "@opentelemetry/exporter-jaeger"
 import { JaegerExporter } from "@opentelemetry/exporter-jaeger"
 
-export const JaegerTracingExporterConfigServiceId = Symbol()
+export const JaegerTracingExporterConfigSymbol = Symbol()
 
-export class JaegerTracingExporterConfig extends BaseService(
-  JaegerTracingExporterConfigServiceId
-) {
-  constructor(readonly config: ExporterConfig) {
-    super()
-  }
+export class JaegerTracingExporterConfig {
+  readonly [JaegerTracingExporterConfigSymbol] = JaegerTracingExporterConfigSymbol
+  constructor(readonly config: ExporterConfig) {}
 }
 
 export const JaegerTracingExporterConfigTag = tag<JaegerTracingExporterConfig>(
-  JaegerTracingExporterConfigServiceId
+  JaegerTracingExporterConfigSymbol
 )
 
 export function jaegerConfig(config: ExporterConfig) {

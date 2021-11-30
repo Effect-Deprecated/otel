@@ -5,22 +5,20 @@ import * as T from "@effect-ts/core/Effect"
 import * as L from "@effect-ts/core/Effect/Layer"
 import * as M from "@effect-ts/core/Effect/Managed"
 import { identity } from "@effect-ts/core/Function"
-import type { Service } from "@effect-ts/core/Has"
 import { tag } from "@effect-ts/core/Has"
 import * as O from "@effect-ts/core/Option"
 import * as OT from "@effect-ts/otel"
 import type { NodeTracerConfig } from "@opentelemetry/sdk-trace-node"
 import { NodeTracerProvider } from "@opentelemetry/sdk-trace-node"
 
-const NodeTracerProviderConfigServiceId = Symbol()
+const NodeTracerProviderConfigSymbol = Symbol()
 
-export interface NodeTracerProviderConfig
-  extends Service<typeof NodeTracerProviderConfigServiceId> {
+export interface NodeTracerProviderConfig {
   readonly config: NodeTracerConfig
 }
 
 export const NodeTracerProviderConfig = tag<NodeTracerProviderConfig>(
-  NodeTracerProviderConfigServiceId
+  NodeTracerProviderConfigSymbol
 )
 
 export const LiveNodeTracerProviderConfig = (config: NodeTracerConfig) =>
@@ -36,7 +34,7 @@ export const makeNodeTracingProvider = M.gen(function* (_) {
   const tracerProvider = yield* _(T.succeedWith(() => new NodeTracerProvider(config)))
 
   return identity<OT.TracerProvider>({
-    serviceId: OT.TracerProviderServiceId,
+    [OT.TracerProviderSymbol]: OT.TracerProviderSymbol,
     tracerProvider
   })
 })

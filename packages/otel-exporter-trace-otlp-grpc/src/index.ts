@@ -4,23 +4,20 @@ import * as T from "@effect-ts/core/Effect"
 import * as L from "@effect-ts/core/Effect/Layer"
 import * as M from "@effect-ts/core/Effect/Managed"
 import { pipe } from "@effect-ts/core/Function"
-import { BaseService, tag } from "@effect-ts/core/Has"
+import { tag } from "@effect-ts/core/Has"
 import { SimpleProcessor } from "@effect-ts/otel"
 import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-grpc"
 import type { OTLPExporterConfigNode } from "@opentelemetry/exporter-trace-otlp-grpc/build/src/types"
 
-export const OTLPTraceExporterConfigServiceId = Symbol()
+export const OTLPTraceExporterConfigSymbol = Symbol()
 
-export class OTLPTraceExporterConfig extends BaseService(
-  OTLPTraceExporterConfigServiceId
-) {
-  constructor(readonly config: OTLPExporterConfigNode) {
-    super()
-  }
+export class OTLPTraceExporterConfig {
+  readonly [OTLPTraceExporterConfigSymbol] = OTLPTraceExporterConfigSymbol
+  constructor(readonly config: OTLPExporterConfigNode) {}
 }
 
 export const OTLPTraceExporterConfigTag = tag<OTLPTraceExporterConfig>(
-  OTLPTraceExporterConfigServiceId
+  OTLPTraceExporterConfigSymbol
 )
 
 export const makeOTLPTraceExporterConfigLayer = (config: OTLPExporterConfigNode) =>

@@ -4,7 +4,7 @@ import * as T from "@effect-ts/core/Effect"
 import { pretty } from "@effect-ts/core/Effect/Cause"
 import { pipe } from "@effect-ts/core/Function"
 import type { Has } from "@effect-ts/core/Has"
-import { BaseService, tag } from "@effect-ts/core/Has"
+import { tag } from "@effect-ts/core/Has"
 import * as O from "@effect-ts/core/Option"
 import * as OTApi from "@opentelemetry/api"
 import { context, trace } from "@opentelemetry/api"
@@ -12,17 +12,17 @@ import { context, trace } from "@opentelemetry/api"
 import type { Tracer } from "../Tracer"
 import { withTracer } from "../Tracer"
 
-export const SpanServiceId = Symbol()
+export const SpanSymbol = Symbol()
+export type SpanSymbol = typeof SpanSymbol
 
-export class SpanImpl extends BaseService(SpanServiceId) {
-  constructor(readonly span: OTApi.Span) {
-    super()
-  }
+export class SpanImpl {
+  readonly [SpanSymbol] = SpanSymbol
+  constructor(readonly span: OTApi.Span) {}
 }
 
 export interface Span extends SpanImpl {}
 
-export const Span = tag<Span>(SpanServiceId)
+export const Span = tag<Span>()
 
 export function withSpan(name: string, options?: OTApi.SpanOptions) {
   return <R, E, A>(

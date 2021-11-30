@@ -15,20 +15,20 @@ export const makeNodeTracingProvider = M.gen(function* (_) {
   const tracerProvider = yield* _(T.succeedWith(() => new NodeTracerProvider()))
 
   return identity<OT.TracerProvider>({
-    serviceId: OT.TracerProviderServiceId,
+    serviceId: OT.TracerProviderSymbol,
     tracerProvider
   })
 })
 
 export const NodeProvider = L.fromManaged(OT.TracerProvider)(makeNodeTracingProvider)
 
-export const TestSpanRepoServiceId = Symbol()
+export const TestSpanRepoSymbol = Symbol()
 
 export const makeTestSpanRepo = T.succeedWith(() => {
   const current = new AtomicReference<readonly ReadableSpan[]>([])
 
   return {
-    serviceId: TestSpanRepoServiceId,
+    serviceId: TestSpanRepoSymbol,
     current,
     getSpans: T.succeedWith(() => current.get),
     clear: T.succeedWith(() => current.set([]))
@@ -36,7 +36,7 @@ export const makeTestSpanRepo = T.succeedWith(() => {
 })
 
 export interface TestSpanRepo extends _A<typeof makeTestSpanRepo> {}
-export const TestSpanRepo = tag<TestSpanRepo>(TestSpanRepoServiceId)
+export const TestSpanRepo = tag<TestSpanRepo>(TestSpanRepoSymbol)
 export const LiveTestSpanRepo = L.fromEffect(TestSpanRepo)(makeTestSpanRepo)
 
 export const TestSimple = OT.SimpleProcessor(
