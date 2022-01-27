@@ -17,7 +17,8 @@
           "^packages/otel-jaeger/src/(.*)": "(@effect-ts/otel-jaeger): src/$1",
           "^packages/otel-jaeger/test/(.*)": "(@effect-ts/otel-jaeger/test): test/$1"
         }
-      }
+      },
+      { "transform": "typescript-transform-paths" }
     ]
   }
 }

@@ -39,7 +39,11 @@
       "@effect-ts/otel-jaeger/*": ["packages/otel-jaeger/build/*"],
       "@effect-ts/otel-jaeger": ["packages/otel-jaeger/build"],
       "@effect-ts/otel-grpc/*": ["packages/otel-grpc/build/*"],
-      "@effect-ts/otel-grpc": ["packages/otel-grpc/build"]
+      "@effect-ts/otel-grpc": ["packages/otel-grpc/build"],
+      "@effect-ts/otel-exporter-trace-otlp-grpc": ["packages/otel-exporter-trace-otlp-grpc/build"],
+      "@effect-ts/otel-exporter-trace-otlp-grpc/*": ["packages/otel-exporter-trace-otlp-grpc/build/*"],
+      "@effect-ts/otel-sdk-trace-node": ["packages/otel-sdk-trace-node/build"],
+      "@effect-ts/otel-sdk-trace-node/*": ["packages/otel-sdk-trace-node/build/*"],
     }
   },
   "exclude": ["node_modules", "build", "lib"]

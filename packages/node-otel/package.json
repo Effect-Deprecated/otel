@@ -1,0 +1,36 @@
+{
+  "name": "@effect-ts/node-otel",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": "https://github.com/Effect-TS/otel.git",
+  "homepage": "https://www.matechs.com",
+  "scripts": {
+    "clean": "yarn ets:rimraf build tsbuildinfo dist",
+    "build-cjs": "yarn ets:tsc -p tsconfig.build.cjs.json",
+    "build-esm": "yarn ets:tsc -p tsconfig.build.esm.json",
+    "build-post": "yarn ets:build-utils pack",
+    "build": "yarn ets:concurrently \"yarn build-cjs\" \"yarn build-esm\" && yarn build-post",
+    "lint": "yarn ets:eslint . --ext .ts,.tsx",
+    "autofix": "yarn prettier && yarn lint --fix && yarn prettier",
+    "prettier": "yarn ets:prettier --write \"./{src,test,demo}/**/*.ts\"",
+    "tc": "yarn ets:tsc --noEmit",
+    "circular": "yarn ets:madge --circular --ts-config ./tsconfig.json --extensions ts ./src",
+    "demo": "ts-node --compiler ttypescript --project tsconfig.demo.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
+  "sideEffects": false,
+  "peerDependencies": {
+    "@effect-ts/core": "^0.48.2",
+    "@effect-ts/otel": "0.9.1"
+  },
+  "config": {
+    "modules": []
+  },
+  "devDependencies": {
+    "@effect-ts/node": "^0.35.2",
+    "@effect-ts/otel": "0.9.1"
+  }
+}

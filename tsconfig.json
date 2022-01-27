@@ -5,14 +5,18 @@
     "target": "ES2018",
     "baseUrl": ".",
     "paths": {
-      "@effect-ts/otel/*": ["packages/otel/src/*"],
       "@effect-ts/otel": ["packages/otel/src"],
-      "@effect-ts/otel-node/*": ["packages/otel-node/src/*"],
-      "@effect-ts/otel-node": ["packages/otel-node/src"],
-      "@effect-ts/otel-jaeger/*": ["packages/otel-jaeger/src/*"],
+      "@effect-ts/otel/*": ["packages/otel/src/*"],
+      "@effect-ts/node-otel": ["packages/node-otel/src"],
+      "@effect-ts/node-otel/*": ["packages/node-otel/src/*"],
       "@effect-ts/otel-jaeger": ["packages/otel-jaeger/src"],
+      "@effect-ts/otel-jaeger/*": ["packages/otel-jaeger/src/*"],
+      "@effect-ts/otel-grpc": ["packages/otel-grpc/src"],
       "@effect-ts/otel-grpc/*": ["packages/otel-grpc/src/*"],
-      "@effect-ts/otel-grpc": ["packages/otel-grpc/src"]
+      "@effect-ts/otel-exporter-trace-otlp-grpc": ["packages/otel-exporter-trace-otlp-grpc/src"],
+      "@effect-ts/otel-exporter-trace-otlp-grpc/*": ["packages/otel-exporter-trace-otlp-grpc/src/*"],
+      "@effect-ts/otel-sdk-trace-node": ["packages/otel-sdk-trace-node/src"],
+      "@effect-ts/otel-sdk-trace-node/*": ["packages/otel-sdk-trace-node/src/*"],
     }
   }
 }
