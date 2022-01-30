@@ -1,6 +1,5 @@
 {
   "name": "@effect-ts/otel-exporter-trace-otlp-http",
-  "version": "0.11.2",
   "license": "MIT",
   "repository": "https://github.com/Effect-TS/otel.git",
   "homepage": "https://www.matechs.com",
