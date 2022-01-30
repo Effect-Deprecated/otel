@@ -12,6 +12,7 @@ module.exports = {
   modulePathIgnorePatterns: [
     "<rootDir>/packages/.*/build",
     "<rootDir>/packages/.*/compiler-debug",
+    "<rootDir>/packages/.*/dist",
     "<rootDir>/_tmp"
   ],
   verbose: true,
