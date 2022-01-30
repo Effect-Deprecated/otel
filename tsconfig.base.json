@@ -32,14 +32,14 @@
     "typeRoots": ["./node_modules/@types", "./typings"],
     "baseUrl": ".",
     "paths": {
-      "@effect-ts/otel/*": ["packages/otel/build/*"],
-      "@effect-ts/otel": ["packages/otel/build"],
-      "@effect-ts/otel-node/*": ["packages/otel-node/build/*"],
-      "@effect-ts/otel-node": ["packages/otel-node/build"],
-      "@effect-ts/otel-jaeger/*": ["packages/otel-jaeger/build/*"],
-      "@effect-ts/otel-jaeger": ["packages/otel-jaeger/build"],
-      "@effect-ts/otel-grpc/*": ["packages/otel-grpc/build/*"],
-      "@effect-ts/otel-grpc": ["packages/otel-grpc/build"]
+      "@effect-ts/otel/*": ["packages/otel/build/dts/*"],
+      "@effect-ts/otel": ["packages/otel/build/dts"],
+      "@effect-ts/otel-node/*": ["packages/otel-node/build/dts/*"],
+      "@effect-ts/otel-node": ["packages/otel-node/build/dts"],
+      "@effect-ts/otel-jaeger/*": ["packages/otel-jaeger/build/dts/*"],
+      "@effect-ts/otel-jaeger": ["packages/otel-jaeger/build/dts"],
+      "@effect-ts/otel-grpc/*": ["packages/otel-grpc/build/dts/*"],
+      "@effect-ts/otel-grpc": ["packages/otel-grpc/build/dts"]
     }
   },
   "exclude": ["node_modules", "build", "lib"]

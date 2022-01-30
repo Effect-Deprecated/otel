@@ -1,16 +1,17 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "build",
+    "outDir": "build/cjs",
     "target": "ES2018",
     "module": "CommonJS",
+    "declarationDir": "build/dts",
     "incremental": true,
     "tsBuildInfoFile": "tsbuildinfo/build.tsbuildinfo",
     "removeComments": false,
     "plugins": [
       {
         "transform": "@effect-ts/tracing-plugin",
-        "moduleMap": { "^src/(.*)": "(@effect-ts/otel-grpc): _src/$1" }
+        "moduleMap": { "^src/(.*)": "(@effect-ts/otel): _src/$1" }
       }
     ]
   },
