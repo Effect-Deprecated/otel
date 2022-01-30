@@ -1,0 +1,44 @@
+{
+  "name": "@effect-ts/otel-exporter-trace-otlp-http",
+  "version": "0.11.2",
+  "license": "MIT",
+  "repository": "https://github.com/Effect-TS/otel.git",
+  "homepage": "https://www.matechs.com",
+  "scripts": {
+    "clean": "yarn ets:rimraf build tsbuildinfo dist",
+    "build-cjs": "yarn ets:tsc -p tsconfig.build.cjs.json",
+    "build-esm": "yarn ets:tsc -p tsconfig.build.esm.json",
+    "build-post": "yarn ets:build-utils pack",
+    "build": "yarn ets:concurrently \"yarn build-cjs\" \"yarn build-esm\" && yarn build-post",
+    "lint": "eslint . --ext .ts,.tsx",
+    "autofix": "yarn prettier && yarn lint --fix && yarn prettier",
+    "prettier": "prettier --write \"./{src,test,demo}/**/*.ts\"",
+    "prettier:lib": "prettier --write \"./build/**/*.js\"",
+    "tc": "tsc --noEmit",
+    "demo": "ts-node --project tsconfig.build.json -r tsconfig-paths/register -r @effect-ts/system/Tracing/Enable",
+    "circular": "madge --circular --ts-config ./tsconfig.build.json --extensions ts ./src",
+    "debug": "tsc -p tsconfig.debug.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "directory": "dist"
+  },
+  "sideEffects": false,
+  "peerDependencies": {
+    "@effect-ts/core": "^0.53.0",
+    "@opentelemetry/api": "^1.0.0",
+    "@opentelemetry/core": "^1.0.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.27.0",
+    "@opentelemetry/sdk-trace-base": "^1.0.0"
+  },
+  "dependencies": {
+    "@effect-ts/otel": "^0.11.2"
+  },
+  "devDependencies": {
+    "@opentelemetry/exporter-trace-otlp-http": "0.27.0"
+  },
+  "config": {
+    "side": [],
+    "modules": []
+  }
+}

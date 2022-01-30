@@ -10,7 +10,7 @@
     "plugins": [
       {
         "transform": "@effect-ts/tracing-plugin",
-        "moduleMap": { "^src/(.*)": "(@effect-ts/otel-grpc): _src/$1" }
+        "moduleMap": { "^src/(.*)": "(@effect-ts/otel-exporter-trace-otlp-grpc): _src/$1" }
       }
     ]
   },

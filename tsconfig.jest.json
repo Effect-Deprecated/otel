@@ -10,6 +10,7 @@
         "moduleMap": {
           "^packages/otel/src/(.*)": "(@effect-ts/otel): src/$1",
           "^packages/otel/test/(.*)": "(@effect-ts/otel/test): test/$1",
+          // NOTE the entries below are outdated
           "^packages/otel-node/src/(.*)": "(@effect-ts/otel-node): src/$1",
           "^packages/otel-node/test/(.*)": "(@effect-ts/otel-node/test): test/$1",
           "^packages/otel-grpc/src/(.*)": "(@effect-ts/otel-grpc): src/$1",
