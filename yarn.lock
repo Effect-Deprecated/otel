@@ -590,7 +590,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@effect-ts/otel@^0.11.2, @effect-ts/otel@workspace:packages/otel":
+"@effect-ts/otel@npm:^0.11.2":
+  version: 0.11.2
+  resolution: "@effect-ts/otel@npm:0.11.2"
+  peerDependencies:
+    "@effect-ts/core": ^0.53.0
+    "@opentelemetry/api": ^1.0.0
+    "@opentelemetry/core": ^1.0.0
+    "@opentelemetry/sdk-trace-base": ^1.0.1
+  checksum: 71198a21da503c0d3f3333acacc7783753dba9e70606d9d59219bbb585d256d5668e3e287c7799a281fd30b1780a04a4ea11eb06eaaa18cd3d2d3dfa7aa1dea9
+  languageName: node
+  linkType: hard
+
+"@effect-ts/otel@workspace:packages/otel":
   version: 0.0.0-use.local
   resolution: "@effect-ts/otel@workspace:packages/otel"
   dependencies:
