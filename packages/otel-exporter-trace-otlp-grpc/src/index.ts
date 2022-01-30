@@ -7,7 +7,7 @@ import { pipe } from "@effect-ts/core/Function"
 import { tag } from "@effect-ts/core/Has"
 import { SimpleProcessor } from "@effect-ts/otel"
 import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-grpc"
-import type { OTLPExporterConfigNode } from "@opentelemetry/exporter-trace-otlp-grpc/build/src/types"
+import type { OTLPExporterConfigNode } from "@opentelemetry/exporter-trace-otlp-grpc"
 
 export const OTLPTraceExporterConfigSymbol = Symbol()
 
