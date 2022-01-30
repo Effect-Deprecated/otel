@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/Effect-TS/otel/compare/@effect-ts/otel@0.9.1...@effect-ts/otel@0.11.0) (2022-01-30)
+
+**Note:** Version bump only for package @effect-ts/otel
+
+
+
+
+
 # [0.10.0](https://github.com/Effect-TS/otel/compare/@effect-ts/otel@0.9.1...@effect-ts/otel@0.10.0) (2022-01-30)
 
 **Note:** Version bump only for package @effect-ts/otel
