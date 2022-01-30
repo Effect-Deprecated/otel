@@ -9,7 +9,7 @@
   ],
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "independent",
+  "version": "fixed",
   "command": {
     "version": {
       "message": "chore(release): publish"
