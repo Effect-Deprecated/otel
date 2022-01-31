@@ -2,8 +2,8 @@ import * as T from "@effect-ts/core/Effect"
 import { pipe } from "@effect-ts/core/Function"
 import * as J from "@effect-ts/jest/Test"
 
-import * as OT from "../src"
-import { cleanTracesAfter, getSpans, TestTracing } from "./TestTracing"
+import * as OT from "../src/index.js"
+import { cleanTracesAfter, getSpans, TestTracing } from "./TestTracing/index.js"
 
 const program = OT.withSpan(`RootSpan`)(
   pipe(

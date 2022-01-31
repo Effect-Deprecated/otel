@@ -490,25 +490,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@effect-ts/build-utils@npm:^0.33.0":
-  version: 0.33.0
-  resolution: "@effect-ts/build-utils@npm:0.33.0"
+"@effect-ts/build-utils@npm:^0.34.5":
+  version: 0.34.5
+  resolution: "@effect-ts/build-utils@npm:0.34.5"
   peerDependencies:
     "@effect-ts/core": ">= 0.28.9"
     chalk: ">= 4.1.0"
     cpx: ">= 1.5.0"
   bin:
     build-utils: build-utils
-  checksum: 5e534c6b9f8fbdddb0025d4f5b9cf5eea6995201f34a70e49849b1a7c5529b3e0c346224b9277f5f40dcfd45f2613791b149532f192696935406651da77e3e4f
+  checksum: 3d9ec93f43af1974fa65c1c219e934f3af23c0cbc8422fea47f8ab8fe789b114a64499ce0b5a1eeea12655bdccbdb56cfa78575bd2bca68a4f1913232d8a828c
   languageName: node
   linkType: hard
 
-"@effect-ts/core@npm:^0.53.0":
-  version: 0.53.0
-  resolution: "@effect-ts/core@npm:0.53.0"
+"@effect-ts/core@npm:^0.54.5":
+  version: 0.54.5
+  resolution: "@effect-ts/core@npm:0.54.5"
   dependencies:
-    "@effect-ts/system": ^0.50.0
-  checksum: feb8dc9eca4d6cb73a76fe643b46f661a317e2c311ee9255c7623dba909667c6426e83b829765ab44e4d41ce0d4fe94f3f5f649f6012809ac962a8f348b2bd6c
+    "@effect-ts/system": ^0.51.5
+  checksum: 18a5da7a2e9438d0b67ce2a6efc47e173f50c143c08ec75c73cd1e6f1617aaf15800e47c745bfaf32c50e3db177ab93f56af95b8940b96f8f40f64a5b7a12fbf
   languageName: node
   linkType: hard
 
@@ -605,17 +605,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@effect-ts/system@npm:^0.50.0":
-  version: 0.50.0
-  resolution: "@effect-ts/system@npm:0.50.0"
-  checksum: 204d84b907b802ab289ba5a54779e2cf7a4bedaed2e36c4b2cf75a0e8c0e843279b09a1f146065c5306e108ecf1468b6561d58b515632a69e6bbd4d4dc1066ce
+"@effect-ts/system@npm:^0.51.5":
+  version: 0.51.5
+  resolution: "@effect-ts/system@npm:0.51.5"
+  checksum: 1db3c2a4da2140be025a4b425aa5ea7f319fce86c6760e5b21d95320f9e51af1190ee9c8a3ad1c50cb5af78a8375119b2492f506192377ce939c6dcc480748d1
   languageName: node
   linkType: hard
 
-"@effect-ts/tracing-plugin@npm:^0.16.0":
-  version: 0.16.0
-  resolution: "@effect-ts/tracing-plugin@npm:0.16.0"
-  checksum: e9be60e0884a045057576e46152758ef2b043a0448dc9c5d052825d989eab63621fc012d578fdb7ec35356a491507e8d13bc12b895b2c6448964c45d4162f75c
+"@effect-ts/tracing-plugin@npm:^0.17.0":
+  version: 0.17.0
+  resolution: "@effect-ts/tracing-plugin@npm:0.17.0"
+  checksum: f102d627ea11fdc369c99e6c03f2504fbe22585978131577d9dd67f77aa489359c66ea1709e1fa7e60bb1af41463dd90f8946ad54b46aaa2e541870e4e6f0e38
   languageName: node
   linkType: hard
 
@@ -2489,13 +2489,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^5.10.1":
-  version: 5.10.1
-  resolution: "@typescript-eslint/eslint-plugin@npm:5.10.1"
+"@typescript-eslint/eslint-plugin@npm:^5.10.2":
+  version: 5.10.2
+  resolution: "@typescript-eslint/eslint-plugin@npm:5.10.2"
   dependencies:
-    "@typescript-eslint/scope-manager": 5.10.1
-    "@typescript-eslint/type-utils": 5.10.1
-    "@typescript-eslint/utils": 5.10.1
+    "@typescript-eslint/scope-manager": 5.10.2
+    "@typescript-eslint/type-utils": 5.10.2
+    "@typescript-eslint/utils": 5.10.2
     debug: ^4.3.2
     functional-red-black-tree: ^1.0.1
     ignore: ^5.1.8
@@ -2508,42 +2508,42 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 44d71b4622c0e53bb0c576f2b94bf9274faf0c2f3d5fc0357ecec211add6ebfc96c15a5fa68aab8eede1a928f09631062517617ee83a8d228d2c81215c0156a8
+  checksum: 460808a3c7d0390a7dcc1b2e717c2c4e303a31f9161fbc8c4ecc7bec076285d636d505d2f1ca9932c7a7989ea0fc3a78023be9f342bd8c4bdfe4a9842d0c053a
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^5.10.1":
-  version: 5.10.1
-  resolution: "@typescript-eslint/parser@npm:5.10.1"
+"@typescript-eslint/parser@npm:^5.10.2":
+  version: 5.10.2
+  resolution: "@typescript-eslint/parser@npm:5.10.2"
   dependencies:
-    "@typescript-eslint/scope-manager": 5.10.1
-    "@typescript-eslint/types": 5.10.1
-    "@typescript-eslint/typescript-estree": 5.10.1
+    "@typescript-eslint/scope-manager": 5.10.2
+    "@typescript-eslint/types": 5.10.2
+    "@typescript-eslint/typescript-estree": 5.10.2
     debug: ^4.3.2
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 36e94b3fb5010f09311f1667f8beed1ece46677e738424df78e266eef0957e33671d505a7979d775e863b553d509ce8dbee6201a6994da5282ff38f8e1ae0303
+  checksum: c83e3afee090e9cc830d6c59cd87681a83ae95f2daa848040f2e67ef34f87c5ec707a571b3ccb31b67adc0447b22b62c048a6cb088e661801dacb9c2cf070a9c
   languageName: node
   linkType: hard
 
-"@typescript-eslint/scope-manager@npm:5.10.1":
-  version: 5.10.1
-  resolution: "@typescript-eslint/scope-manager@npm:5.10.1"
+"@typescript-eslint/scope-manager@npm:5.10.2":
+  version: 5.10.2
+  resolution: "@typescript-eslint/scope-manager@npm:5.10.2"
   dependencies:
-    "@typescript-eslint/types": 5.10.1
-    "@typescript-eslint/visitor-keys": 5.10.1
-  checksum: a4f802ca683bcb3db0e14739d02e680f0f51b6562c23380ea9e0878a70f638572650bd2dbc62f8d74bc39657c053c3e6469a0d4179d3d99bb94fd47bd14d6ecf
+    "@typescript-eslint/types": 5.10.2
+    "@typescript-eslint/visitor-keys": 5.10.2
+  checksum: 22c8ac9047a1a276e0b911eca0eee30c4f7f7089688dca36314da28143d349c504e542116d3e201d52da50b212f38b2125e3918e6ae2e2b0b57964fb1cdf8fcd
   languageName: node
   linkType: hard
 
-"@typescript-eslint/type-utils@npm:5.10.1":
-  version: 5.10.1
-  resolution: "@typescript-eslint/type-utils@npm:5.10.1"
+"@typescript-eslint/type-utils@npm:5.10.2":
+  version: 5.10.2
+  resolution: "@typescript-eslint/type-utils@npm:5.10.2"
   dependencies:
-    "@typescript-eslint/utils": 5.10.1
+    "@typescript-eslint/utils": 5.10.2
     debug: ^4.3.2
     tsutils: ^3.21.0
   peerDependencies:
@@ -2551,23 +2551,23 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: f7310e036490c47bce132ad4c8185dc253eb5afb954788335811f46ae36c0ea92816319ca1072481f9a8dbac3cd36cc22a8cdc86f2014d0882b8c4029c69d491
+  checksum: 7732c826ef6c798af0f45b85f0389688e614de16c7c2c7e446a664787df360242cf2bc9d68d6ce1993f1bfc289b5d6a75a400fc968b7ded187c30c40f978de52
   languageName: node
   linkType: hard
 
-"@typescript-eslint/types@npm:5.10.1":
-  version: 5.10.1
-  resolution: "@typescript-eslint/types@npm:5.10.1"
-  checksum: e8bbedae74637c35677aab92eceb154e8f1b100b6015d4aa20b5d52bb2e486e50733feca07610406763e1cc36c448a97ca77f058f4e07e7c61bd8d830c092030
+"@typescript-eslint/types@npm:5.10.2":
+  version: 5.10.2
+  resolution: "@typescript-eslint/types@npm:5.10.2"
+  checksum: fa44dbd31d12f16ada6a6e7dba61ff90bf955b400f314f7378d9775cc8e13ef5da3318e89a90c3c3f75d50179e6be104ed8f90d4e77a02d6f7793b346bf25f15
   languageName: node
   linkType: hard
 
-"@typescript-eslint/typescript-estree@npm:5.10.1":
-  version: 5.10.1
-  resolution: "@typescript-eslint/typescript-estree@npm:5.10.1"
+"@typescript-eslint/typescript-estree@npm:5.10.2":
+  version: 5.10.2
+  resolution: "@typescript-eslint/typescript-estree@npm:5.10.2"
   dependencies:
-    "@typescript-eslint/types": 5.10.1
-    "@typescript-eslint/visitor-keys": 5.10.1
+    "@typescript-eslint/types": 5.10.2
+    "@typescript-eslint/visitor-keys": 5.10.2
     debug: ^4.3.2
     globby: ^11.0.4
     is-glob: ^4.0.3
@@ -2576,33 +2576,33 @@ __metadata:
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 5721e99baa9b286a474a22c4b08e6ac5a0d79435e7f2a91e876e6a2135a44244f0a83ff42cc1cd2ac23cc6ee014965baaa84481e9017f703c45f22e474620c7f
+  checksum: 2fdad1448578ee5c7f5876c998de50e2fa5fd6eed9effbfa9b0cf2579afe195964f0e4ebaa5d94ae228096cddf016500e9c8cc2f60c3dff981f09ebb42e5de53
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:5.10.1, @typescript-eslint/utils@npm:^5.10.0":
-  version: 5.10.1
-  resolution: "@typescript-eslint/utils@npm:5.10.1"
+"@typescript-eslint/utils@npm:5.10.2, @typescript-eslint/utils@npm:^5.10.0":
+  version: 5.10.2
+  resolution: "@typescript-eslint/utils@npm:5.10.2"
   dependencies:
     "@types/json-schema": ^7.0.9
-    "@typescript-eslint/scope-manager": 5.10.1
-    "@typescript-eslint/types": 5.10.1
-    "@typescript-eslint/typescript-estree": 5.10.1
+    "@typescript-eslint/scope-manager": 5.10.2
+    "@typescript-eslint/types": 5.10.2
+    "@typescript-eslint/typescript-estree": 5.10.2
     eslint-scope: ^5.1.1
     eslint-utils: ^3.0.0
   peerDependencies:
     eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
-  checksum: beca5b5eb56b6236215baa409619fc8eea700e733094683c3ac39236bf442793b61fcf3ad6fe57ccec265649962d84c1951900e47bd55208ed50c4c2c7d8cf6b
+  checksum: d0dde3066f52405dffc2cbccd43d2aa2d9336510f178aa43812d616c951ea45f83693e2f6a88e3abfc94e2cc5f9eb3f2be9221a38848fe70aaffc294794c9d53
   languageName: node
   linkType: hard
 
-"@typescript-eslint/visitor-keys@npm:5.10.1":
-  version: 5.10.1
-  resolution: "@typescript-eslint/visitor-keys@npm:5.10.1"
+"@typescript-eslint/visitor-keys@npm:5.10.2":
+  version: 5.10.2
+  resolution: "@typescript-eslint/visitor-keys@npm:5.10.2"
   dependencies:
-    "@typescript-eslint/types": 5.10.1
+    "@typescript-eslint/types": 5.10.2
     eslint-visitor-keys: ^3.0.0
-  checksum: 7e1e1a41b2df797534ee56c0d9ae2a056e0ca0ca019b31125fd52d7deb0e802d899920031f2dbf88a951e6752d8fcbd9fa904eaeccb50cf30d2b92b54fd7879d
+  checksum: f80caa1f0d71da096e9e18728b76046286cad691b178c0d101b71e5b553ee4a427ae2c2f8b9bc789dce266f62b026b7ca88ddafd52fde4f0dbb24e05765629b7
   languageName: node
   linkType: hard
 
@@ -4512,18 +4512,18 @@ __metadata:
   dependencies:
     "@babel/cli": ^7.16.8
     "@babel/core": ^7.16.12
-    "@effect-ts/build-utils": ^0.33.0
-    "@effect-ts/core": ^0.53.0
+    "@effect-ts/build-utils": ^0.34.5
+    "@effect-ts/core": ^0.54.5
     "@effect-ts/jest": ^0.33.0
     "@effect-ts/node": ^0.36.0
-    "@effect-ts/tracing-plugin": ^0.16.0
+    "@effect-ts/tracing-plugin": ^0.17.0
     "@types/cpx": ^1.5.2
     "@types/glob": ^7.2.0
     "@types/jest": ^27.4.0
     "@types/node": ^17.0.13
     "@types/rimraf": ^3.0.2
-    "@typescript-eslint/eslint-plugin": ^5.10.1
-    "@typescript-eslint/parser": ^5.10.1
+    "@typescript-eslint/eslint-plugin": ^5.10.2
+    "@typescript-eslint/parser": ^5.10.2
     babel-plugin-annotate-pure-calls: ^0.4.0
     chalk: ^4.1.2
     concurrently: ^7.0.0
