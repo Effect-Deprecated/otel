@@ -8,7 +8,7 @@ import type { Has } from "@effect-ts/core/Has"
 import { tag } from "@effect-ts/core/Has"
 import type * as OTTracing from "@opentelemetry/sdk-trace-base"
 
-import { TracerProvider } from "../TracerProvider"
+import { TracerProvider } from "../TracerProvider/index.js"
 
 export const TracerSymbol = Symbol()
 export type TracerSymbol = typeof TracerSymbol

@@ -9,8 +9,8 @@ import * as O from "@effect-ts/core/Option"
 import * as OTApi from "@opentelemetry/api"
 import { context, trace } from "@opentelemetry/api"
 
-import type { Tracer } from "../Tracer"
-import { withTracer } from "../Tracer"
+import type { Tracer } from "../Tracer/index.js"
+import { withTracer } from "../Tracer/index.js"
 
 export const SpanSymbol = Symbol()
 export type SpanSymbol = typeof SpanSymbol

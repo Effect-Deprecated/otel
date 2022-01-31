@@ -8,7 +8,7 @@ import { tag } from "@effect-ts/core/Has"
 import type { SpanExporter } from "@opentelemetry/sdk-trace-base"
 import { ConsoleSpanExporter, SimpleSpanProcessor } from "@opentelemetry/sdk-trace-base"
 
-import { TracerProvider } from "../../TracerProvider"
+import { TracerProvider } from "../../TracerProvider/index.js"
 
 //
 // Span Processor
