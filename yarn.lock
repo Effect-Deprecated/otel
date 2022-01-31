@@ -535,7 +535,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@effect-ts/otel-exporter-jaeger@workspace:packages/otel-exporter-jaeger"
   dependencies:
-    "@effect-ts/otel": ^0.11.4
+    "@effect-ts/otel": ^0.11.5
     "@opentelemetry/exporter-jaeger": 1.0.1
   peerDependencies:
     "@effect-ts/core": ^0.53.0
@@ -550,7 +550,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@effect-ts/otel-exporter-trace-otlp-grpc@workspace:packages/otel-exporter-trace-otlp-grpc"
   dependencies:
-    "@effect-ts/otel": ^0.11.4
+    "@effect-ts/otel": ^0.11.5
     "@opentelemetry/exporter-trace-otlp-grpc": 0.27.0
   peerDependencies:
     "@effect-ts/core": ^0.53.0
@@ -565,7 +565,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@effect-ts/otel-exporter-trace-otlp-http@workspace:packages/otel-exporter-trace-otlp-http"
   dependencies:
-    "@effect-ts/otel": ^0.11.4
+    "@effect-ts/otel": ^0.11.5
     "@opentelemetry/exporter-trace-otlp-http": 0.27.0
   peerDependencies:
     "@effect-ts/core": ^0.53.0
@@ -580,7 +580,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@effect-ts/otel-sdk-trace-node@workspace:packages/otel-sdk-trace-node"
   dependencies:
-    "@effect-ts/otel": ^0.11.4
+    "@effect-ts/otel": ^0.11.5
   peerDependencies:
     "@effect-ts/core": ^0.53.0
     "@opentelemetry/api": ^1.0.0
@@ -590,7 +590,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@effect-ts/otel@^0.11.4, @effect-ts/otel@workspace:packages/otel":
+"@effect-ts/otel@^0.11.5, @effect-ts/otel@workspace:packages/otel":
   version: 0.0.0-use.local
   resolution: "@effect-ts/otel@workspace:packages/otel"
   dependencies:
