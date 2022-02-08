@@ -490,25 +490,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@effect-ts/build-utils@npm:^0.34.5":
-  version: 0.34.5
-  resolution: "@effect-ts/build-utils@npm:0.34.5"
+"@effect-ts/build-utils@npm:^0.35.2":
+  version: 0.35.2
+  resolution: "@effect-ts/build-utils@npm:0.35.2"
   peerDependencies:
     "@effect-ts/core": ">= 0.28.9"
     chalk: ">= 4.1.0"
     cpx: ">= 1.5.0"
   bin:
     build-utils: build-utils
-  checksum: 3d9ec93f43af1974fa65c1c219e934f3af23c0cbc8422fea47f8ab8fe789b114a64499ce0b5a1eeea12655bdccbdb56cfa78575bd2bca68a4f1913232d8a828c
+  checksum: 3fc3d673f449db0f00cb65c24e4abbaa10e0830a3a46d029d88e4290c6a741d27c8a586ce7b63631e7be796f5750169693235215b0cddf11287aa43400bf320d
   languageName: node
   linkType: hard
 
-"@effect-ts/core@npm:^0.54.5":
-  version: 0.54.5
-  resolution: "@effect-ts/core@npm:0.54.5"
+"@effect-ts/core@npm:^0.55.2":
+  version: 0.55.2
+  resolution: "@effect-ts/core@npm:0.55.2"
   dependencies:
-    "@effect-ts/system": ^0.51.5
-  checksum: 18a5da7a2e9438d0b67ce2a6efc47e173f50c143c08ec75c73cd1e6f1617aaf15800e47c745bfaf32c50e3db177ab93f56af95b8940b96f8f40f64a5b7a12fbf
+    "@effect-ts/system": ^0.52.2
+  checksum: 956e504bcdcac6e8a4f0377679c92fe905c71b3acf72b13bd5957a16f73070fa12038a091e63ecd43b2861c6651ada520743f1e4e69d38287a8689231e34cfaa
   languageName: node
   linkType: hard
 
@@ -538,7 +538,7 @@ __metadata:
     "@effect-ts/otel": ^0.11.6
     "@opentelemetry/exporter-jaeger": 1.0.1
   peerDependencies:
-    "@effect-ts/core": ^0.53.0
+    "@effect-ts/core": ^0.55.0
     "@opentelemetry/api": ^1.0.0
     "@opentelemetry/core": ^1.0.0
     "@opentelemetry/exporter-jaeger": ^1.0.0
@@ -553,7 +553,7 @@ __metadata:
     "@effect-ts/otel": ^0.11.6
     "@opentelemetry/exporter-trace-otlp-grpc": 0.27.0
   peerDependencies:
-    "@effect-ts/core": ^0.53.0
+    "@effect-ts/core": ^0.55.0
     "@opentelemetry/api": ^1.0.0
     "@opentelemetry/core": ^1.0.0
     "@opentelemetry/exporter-trace-otlp-grpc": ^0.27.0
@@ -568,7 +568,7 @@ __metadata:
     "@effect-ts/otel": ^0.11.6
     "@opentelemetry/exporter-trace-otlp-http": 0.27.0
   peerDependencies:
-    "@effect-ts/core": ^0.53.0
+    "@effect-ts/core": ^0.55.0
     "@opentelemetry/api": ^1.0.0
     "@opentelemetry/core": ^1.0.0
     "@opentelemetry/exporter-trace-otlp-http": ^0.27.0
@@ -582,7 +582,7 @@ __metadata:
   dependencies:
     "@effect-ts/otel": ^0.11.6
   peerDependencies:
-    "@effect-ts/core": ^0.53.0
+    "@effect-ts/core": ^0.55.0
     "@opentelemetry/api": ^1.0.0
     "@opentelemetry/core": ^1.0.0
     "@opentelemetry/sdk-trace-base": ^1.0.0
@@ -598,24 +598,24 @@ __metadata:
     "@opentelemetry/sdk-trace-base": 1.0.1
     "@opentelemetry/sdk-trace-node": 1.0.1
   peerDependencies:
-    "@effect-ts/core": ^0.53.0
+    "@effect-ts/core": ^0.55.0
     "@opentelemetry/api": ^1.0.0
     "@opentelemetry/core": ^1.0.0
     "@opentelemetry/sdk-trace-base": ^1.0.1
   languageName: unknown
   linkType: soft
 
-"@effect-ts/system@npm:^0.51.5":
-  version: 0.51.5
-  resolution: "@effect-ts/system@npm:0.51.5"
-  checksum: 1db3c2a4da2140be025a4b425aa5ea7f319fce86c6760e5b21d95320f9e51af1190ee9c8a3ad1c50cb5af78a8375119b2492f506192377ce939c6dcc480748d1
+"@effect-ts/system@npm:^0.52.2":
+  version: 0.52.2
+  resolution: "@effect-ts/system@npm:0.52.2"
+  checksum: 9f482a9e5c2936140886806ba9da056968d711b6334b481429b55d43f755ca948695e6c612cd8a03141a09940e64ced716eedb70c974a4ddab169e533823cfb4
   languageName: node
   linkType: hard
 
-"@effect-ts/tracing-plugin@npm:^0.17.0":
-  version: 0.17.0
-  resolution: "@effect-ts/tracing-plugin@npm:0.17.0"
-  checksum: f102d627ea11fdc369c99e6c03f2504fbe22585978131577d9dd67f77aa489359c66ea1709e1fa7e60bb1af41463dd90f8946ad54b46aaa2e541870e4e6f0e38
+"@effect-ts/tracing-plugin@npm:^0.18.0":
+  version: 0.18.0
+  resolution: "@effect-ts/tracing-plugin@npm:0.18.0"
+  checksum: 289a2e0085bd116a3fc5fa0b346aef56b87b49b931c8286183b2f7e7817a43e436a7baa944b79849afd39a6208d211842e4a366043efb2e09f345f85e15034af
   languageName: node
   linkType: hard
 
@@ -4512,11 +4512,11 @@ __metadata:
   dependencies:
     "@babel/cli": ^7.16.8
     "@babel/core": ^7.16.12
-    "@effect-ts/build-utils": ^0.34.5
-    "@effect-ts/core": ^0.54.5
+    "@effect-ts/build-utils": ^0.35.2
+    "@effect-ts/core": ^0.55.2
     "@effect-ts/jest": ^0.33.0
     "@effect-ts/node": ^0.36.0
-    "@effect-ts/tracing-plugin": ^0.17.0
+    "@effect-ts/tracing-plugin": ^0.18.0
     "@types/cpx": ^1.5.2
     "@types/glob": ^7.2.0
     "@types/jest": ^27.4.0
