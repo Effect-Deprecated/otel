@@ -2,6 +2,10 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "outDir": "build/esm",
+    "declarationDir": "build/dts",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
     "module": "ES6",
     "target": "ES2018",
     "incremental": true,
@@ -10,10 +14,17 @@
     "plugins": [
       {
         "transform": "@effect-ts/tracing-plugin",
-        "moduleMap": { "^src/(.*)": "(@effect-ts/otel-node): _src/$1" }
+        "moduleMap": {
+          "^src/(.*)": "(@effect-ts/otel-node): _src/$1"
+        }
       }
     ]
   },
-  "include": ["src/**/*"],
-  "exclude": ["test", "node_modules"]
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "test",
+    "node_modules"
+  ]
 }

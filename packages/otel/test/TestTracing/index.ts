@@ -9,7 +9,7 @@ import { ExportResultCode } from "@opentelemetry/core"
 import type { ReadableSpan, SpanExporter } from "@opentelemetry/sdk-trace-base"
 import { NodeTracerProvider } from "@opentelemetry/sdk-trace-node"
 
-import * as OT from "../../src"
+import * as OT from "../../src/index.js"
 
 export const makeNodeTracingProvider = M.gen(function* (_) {
   const tracerProvider = yield* _(T.succeedWith(() => new NodeTracerProvider()))

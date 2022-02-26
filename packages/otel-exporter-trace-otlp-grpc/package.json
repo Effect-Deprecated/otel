@@ -6,18 +6,16 @@
   "homepage": "https://www.matechs.com",
   "scripts": {
     "clean": "yarn ets:rimraf build tsbuildinfo dist",
-    "build-cjs": "yarn ets:tsc -p tsconfig.build.cjs.json",
-    "build-esm": "yarn ets:tsc -p tsconfig.build.esm.json",
+    "build-cjs": "yarn ets:babel build/esm --config-file ./.babel.cjs.json --out-dir build/cjs --out-file-extension .js --source-maps",
+    "build-mjs": "yarn ets:babel build/esm --config-file ./.babel.mjs.json --out-dir build/mjs --out-file-extension .mjs --source-maps",
+    "build-ts": "yarn ets:tsc -p tsconfig.build.esm.json",
     "build-post": "yarn ets:build-utils pack",
-    "build": "yarn ets:concurrently \"yarn build-cjs\" \"yarn build-esm\" && yarn build-post",
-    "lint": "eslint . --ext .ts,.tsx",
+    "build": "yarn build-ts && yarn ets:concurrently \"yarn build-cjs\" \"yarn build-mjs\" && yarn build-post",
+    "lint": "yarn ets:eslint . --ext .ts,.tsx",
     "autofix": "yarn prettier && yarn lint --fix && yarn prettier",
-    "prettier": "prettier --write \"./{src,test,demo}/**/*.ts\"",
-    "prettier:lib": "prettier --write \"./build/**/*.js\"",
-    "tc": "tsc --noEmit",
-    "demo": "ts-node --project tsconfig.build.json -r tsconfig-paths/register -r @effect-ts/system/Tracing/Enable",
-    "circular": "madge --circular --ts-config ./tsconfig.build.json --extensions ts ./src",
-    "debug": "tsc -p tsconfig.debug.json"
+    "prettier": "yarn ets:prettier --write \"./{src,test,demo}/**/*.ts\"",
+    "tc": "yarn ets:tsc --noEmit",
+    "circular": "yarn ets:madge --circular --no-color --no-spinner build/esm"
   },
   "publishConfig": {
     "access": "public",
@@ -25,7 +23,7 @@
   },
   "sideEffects": false,
   "peerDependencies": {
-    "@effect-ts/core": "^0.55.0",
+    "@effect-ts/core": "^0.58.0",
     "@opentelemetry/api": "^1.0.0",
     "@opentelemetry/core": "^1.0.0",
     "@opentelemetry/exporter-trace-otlp-grpc": "^0.27.0",
