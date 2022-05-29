@@ -1,18 +1,20 @@
 {
   "extends": "./tsconfig.base.json",
-  "files": [],
-  "compilerOptions": {
-    "target": "ES2018",
-    "baseUrl": ".",
-    "paths": {
-      "@effect-ts/otel/*": ["packages/otel/src/*"],
-      "@effect-ts/otel": ["packages/otel/src"],
-      "@effect-ts/otel-node/*": ["packages/otel-node/src/*"],
-      "@effect-ts/otel-node": ["packages/otel-node/src"],
-      "@effect-ts/otel-jaeger/*": ["packages/otel-jaeger/src/*"],
-      "@effect-ts/otel-jaeger": ["packages/otel-jaeger/src"],
-      "@effect-ts/otel-grpc/*": ["packages/otel-grpc/src/*"],
-      "@effect-ts/otel-grpc": ["packages/otel-grpc/src"]
+  "references": [
+    {
+      "path": "packages/otel"
+    },
+    {
+      "path": "packages/otel-exporter-jaeger"
+    },
+    {
+      "path": "packages/otel-exporter-trace-otlp-grpc"
+    },
+    {
+      "path": "packages/otel-exporter-trace-otlp-http"
+    },
+    {
+      "path": "packages/otel-sdk-trace-node"
     }
-  }
+  ]
 }

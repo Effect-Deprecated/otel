@@ -1,6 +1,5 @@
 build/
-scripts/merge.ts
-scripts/genp.ts
+dist/
 bench/
 compiler-debug/
-dist/
+debug/

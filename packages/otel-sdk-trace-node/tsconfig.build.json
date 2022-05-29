@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "build/esm",
+    "declarationDir": "build/dts",
+    "tsBuildInfoFile": "build/tsbuildinfo/esm.tsbuildinfo",
+    "tsPlusConfig": "../../tsplus.config.json",
+    "rootDir": "_src"
+  },
+  "references": [
+    {
+      "path": "../otel/tsconfig.build.json"
+    }
+  ],
+  "include": ["_src/**/*.ts"],
+  "files": ["./tsplus.prelude.d.ts", "../otel/tsplus.prelude.d.ts"]
+}

@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "moduleDetection": "force",
+    "composite": true,
     "downlevelIteration": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
@@ -10,7 +12,9 @@
     "preserveSymlinks": true,
     "moduleResolution": "node",
     "noEmit": false,
-    "lib": ["es2020"],
+    "lib": [
+      "ES2021"
+    ],
     "sourceMap": true,
     "declarationMap": true,
     "strict": true,
@@ -19,7 +23,7 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
     "noEmitOnError": false,
-    "noErrorTruncation": true,
+    "noErrorTruncation": false,
     "allowJs": false,
     "checkJs": false,
     "forceConsistentCasingInFileNames": true,
@@ -27,20 +31,80 @@
     "stripInternal": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
+    "noUncheckedIndexedAccess": true,
     "strictNullChecks": true,
-    "target": "ES2018",
-    "typeRoots": ["./node_modules/@types", "./typings"],
     "baseUrl": ".",
+    "target": "ES2021",
+    "module": "ES6",
+    "incremental": true,
+    "removeComments": false,
     "paths": {
-      "@effect-ts/otel/*": ["packages/otel/build/dts/*"],
-      "@effect-ts/otel": ["packages/otel/build/dts"],
-      "@effect-ts/otel-node/*": ["packages/otel-node/build/dts/*"],
-      "@effect-ts/otel-node": ["packages/otel-node/build/dts"],
-      "@effect-ts/otel-jaeger/*": ["packages/otel-jaeger/build/dts/*"],
-      "@effect-ts/otel-jaeger": ["packages/otel-jaeger/build/dts"],
-      "@effect-ts/otel-grpc/*": ["packages/otel-grpc/build/dts/*"],
-      "@effect-ts/otel-grpc": ["packages/otel-grpc/build/dts"]
+      "@effect/otel": [
+        "./packages/otel/_src/index.ts"
+      ],
+      "@effect/otel/test/*": [
+        "./packages/otel/_test/*"
+      ],
+      "@effect/otel/examples/*": [
+        "./packages/otel/_examples/*"
+      ],
+      "@effect/otel/*": [
+        "./packages/otel/_src/*"
+      ],
+      "@effect/otel-exporter-jaeger": [
+        "./packages/otel-exporter-jaeger/_src/index.ts"
+      ],
+      "@effect/otel-exporter-jaeger/test/*": [
+        "./packages/otel-exporter-jaeger/_test/*"
+      ],
+      "@effect/otel-exporter-jaeger/examples/*": [
+        "./packages/otel-exporter-jaeger/_examples/*"
+      ],
+      "@effect/otel-exporter-jaeger/*": [
+        "./packages/otel-exporter-jaeger/_src/*"
+      ],
+      "@effect/otel-exporter-trace-otlp-grpc": [
+        "./packages/otel-exporter-trace-otlp-grpc/_src/index.ts"
+      ],
+      "@effect/otel-exporter-trace-otlp-grpc/test/*": [
+        "./packages/otel-exporter-trace-otlp-grpc/_test/*"
+      ],
+      "@effect/otel-exporter-trace-otlp-grpc/examples/*": [
+        "./packages/otel-exporter-trace-otlp-grpc/_examples/*"
+      ],
+      "@effect/otel-exporter-trace-otlp-grpc/*": [
+        "./packages/otel-exporter-trace-otlp-grpc/_src/*"
+      ],
+      "@effect/otel-exporter-trace-otlp-http": [
+        "./packages/otel-exporter-trace-otlp-http/_src/index.ts"
+      ],
+      "@effect/otel-exporter-trace-otlp-http/test/*": [
+        "./packages/otel-exporter-trace-otlp-http/_test/*"
+      ],
+      "@effect/otel-exporter-trace-otlp-http/examples/*": [
+        "./packages/otel-exporter-trace-otlp-http/_examples/*"
+      ],
+      "@effect/otel-exporter-trace-otlp-http/*": [
+        "./packages/otel-exporter-trace-otlp-http/_src/*"
+      ],
+      "@effect/otel-sdk-trace-node": [
+        "./packages/otel-sdk-trace-node/_src/index.ts"
+      ],
+      "@effect/otel-sdk-trace-node/test/*": [
+        "./packages/otel-sdk-trace-node/_test/*"
+      ],
+      "@effect/otel-sdk-trace-node/examples/*": [
+        "./packages/otel-sdk-trace-node/_examples/*"
+      ],
+      "@effect/otel-sdk-trace-node/*": [
+        "./packages/otel-sdk-trace-node/_src/*"
+      ],
     }
   },
-  "exclude": ["node_modules", "build", "lib"]
+  "include": [],
+  "exclude": [
+    "node_modules",
+    "build",
+    "lib"
+  ]
 }

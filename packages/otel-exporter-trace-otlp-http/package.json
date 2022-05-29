@@ -1,39 +1,40 @@
 {
-  "name": "@effect-ts/otel-exporter-trace-otlp-http",
-  "version": "0.13.0",
+  "name": "@effect/otel-exporter-trace-otlp-http",
+  "version": "0.0.0",
   "license": "MIT",
   "repository": "https://github.com/Effect-TS/otel.git",
   "homepage": "https://www.matechs.com",
-  "scripts": {
-    "clean": "yarn ets:rimraf build tsbuildinfo dist",
-    "build-cjs": "yarn ets:babel build/esm --config-file ./.babel.cjs.json --out-dir build/cjs --out-file-extension .js --source-maps",
-    "build-mjs": "yarn ets:babel build/esm --config-file ./.babel.mjs.json --out-dir build/mjs --out-file-extension .mjs --source-maps",
-    "build-ts": "yarn ets:tsc -p tsconfig.build.esm.json",
-    "build-post": "yarn ets:build-utils pack",
-    "build": "yarn build-ts && yarn ets:concurrently \"yarn build-cjs\" \"yarn build-mjs\" && yarn build-post",
-    "lint": "yarn ets:eslint . --ext .ts,.tsx",
-    "autofix": "yarn prettier && yarn lint --fix && yarn prettier",
-    "prettier": "yarn ets:prettier --write \"./{src,test,demo}/**/*.ts\"",
-    "tc": "yarn ets:tsc --noEmit",
-    "circular": "yarn ets:madge --circular --no-color --no-spinner build/esm"
-  },
   "publishConfig": {
     "access": "public",
     "directory": "dist"
   },
-  "sideEffects": false,
-  "peerDependencies": {
-    "@effect-ts/core": "^0.58.0",
-    "@opentelemetry/api": "^1.0.0",
-    "@opentelemetry/core": "^1.0.0",
-    "@opentelemetry/exporter-trace-otlp-http": "^0.27.0",
-    "@opentelemetry/sdk-trace-base": "^1.0.0"
+  "scripts": {
+    "clean": "yarn org:rimraf build tsbuildinfo dist",
+    "build-cjs": "yarn org:babel build/esm --config-file ./.babel.cjs.json --out-dir build/cjs --out-file-extension .js --source-maps",
+    "build-mjs": "yarn org:babel build/esm --config-file ./.babel.mjs.json --out-dir build/mjs --out-file-extension .mjs --source-maps",
+    "build-post": "yarn org:build-utils pack-v2",
+    "build-pack": "yarn org:tsc -b tsconfig.json && yarn org:concurrently \"yarn build-cjs\" \"yarn build-mjs\" && yarn build-post",
+    "lint": "yarn org:eslint . --ext .ts,.tsx",
+    "autofix": "yarn lint --fix",
+    "tc": "yarn org:tsc --noEmit"
+  },
+  "exports": {
+    ".": {
+      "import": "./build/esm/index.js"
+    },
+    "./examples/*": {
+      "import": "./build/examples/*.js"
+    },
+    "./test/*": {
+      "import": "./build/test/*.js"
+    },
+    "./*": {
+      "import": "./build/esm/*.js"
+    }
   },
   "dependencies": {
-    "@effect-ts/otel": "^0.13.0"
-  },
-  "devDependencies": {
-    "@opentelemetry/exporter-trace-otlp-http": "0.27.0"
+    "@effect/otel": "*",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.27.0"
   },
   "config": {
     "side": [],

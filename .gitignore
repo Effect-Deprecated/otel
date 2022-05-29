@@ -1,18 +1,15 @@
 /.yarn/*
 !/.yarn/releases
-!/.yarn/patches
 !/.yarn/plugins
 !/.yarn/sdks
+!/.yarn/patches
 
-lib/
-node_modules/
-.idea/
 coverage/
+*.tsbuildinfo
+node_modules/
 yarn-error.log
-.npmrc
-.ionide/
-.metals/
 .ultra.cache.json
-tsbuildinfo/
-del-tags.sh
-incubation/
+.DS_Store
+tmp/
+build/
+dist/
