@@ -1,5 +1,15 @@
 tasks:
-  - init: yarn install && yarn build
+  - init: yarn install && yarn build && cd .infra && docker compose pull
+    command: cd .infra && docker compose up -d
 github:
   prebuilds:
     addCheck: true
+
+ports:
+  - name: Grafana
+    port: 30003
+  - name: Jaeger
+    port: 16686
+  # Ignore all other open ports
+  - port: 3200-30002
+    onOpen: ignore
