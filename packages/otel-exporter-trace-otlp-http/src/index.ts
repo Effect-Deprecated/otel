@@ -6,8 +6,8 @@ import * as M from "@effect-ts/core/Effect/Managed"
 import { pipe } from "@effect-ts/core/Function"
 import { tag } from "@effect-ts/core/Has"
 import { SimpleProcessor } from "@effect-ts/otel"
-import type { OTLPExporterNodeConfigBase } from "@opentelemetry/exporter-trace-otlp-http"
 import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-http"
+import type { OTLPExporterNodeConfigBase } from "@opentelemetry/otlp-exporter-base"
 
 export const OTLPTraceExporterConfigSymbol = Symbol()
 

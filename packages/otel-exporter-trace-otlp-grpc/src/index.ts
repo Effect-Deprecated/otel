@@ -6,27 +6,27 @@ import * as M from "@effect-ts/core/Effect/Managed"
 import { pipe } from "@effect-ts/core/Function"
 import { tag } from "@effect-ts/core/Has"
 import { SimpleProcessor } from "@effect-ts/otel"
-import type { OTLPExporterConfigNode } from "@opentelemetry/exporter-trace-otlp-grpc"
 import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-grpc"
+import type { OTLPGRPCExporterConfigNode } from "@opentelemetry/otlp-grpc-exporter-base"
 
 export const OTLPTraceExporterConfigSymbol = Symbol()
 
 export class OTLPTraceExporterConfig {
   readonly [OTLPTraceExporterConfigSymbol] = OTLPTraceExporterConfigSymbol
-  constructor(readonly config: OTLPExporterConfigNode) {}
+  constructor(readonly config: OTLPGRPCExporterConfigNode) {}
 }
 
 export const OTLPTraceExporterConfigTag = tag<OTLPTraceExporterConfig>(
   OTLPTraceExporterConfigSymbol
 )
 
-export const makeOTLPTraceExporterConfigLayer = (config: OTLPExporterConfigNode) =>
+export const makeOTLPTraceExporterConfigLayer = (config: OTLPGRPCExporterConfigNode) =>
   L.fromEffect(OTLPTraceExporterConfigTag)(
     T.succeedWith(() => new OTLPTraceExporterConfig(config))
   ).setKey(OTLPTraceExporterConfigTag.key)
 
 export const makeOTLPTraceExporterConfigLayerM = <R, E>(
-  config: T.Effect<R, E, OTLPExporterConfigNode>
+  config: T.Effect<R, E, OTLPGRPCExporterConfigNode>
 ) =>
   L.fromEffect(OTLPTraceExporterConfigTag)(
     T.map_(config, (_) => new OTLPTraceExporterConfig(_))
