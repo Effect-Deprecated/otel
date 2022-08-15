@@ -24,13 +24,20 @@ export interface Span extends SpanImpl {}
 
 export const Span = tag<Span>()
 
-export function withSpan(name: string, options?: OTApi.SpanOptions) {
+export function withSpan(
+  name: string,
+  options?: OTApi.SpanOptions,
+  ctx?: OTApi.Context
+) {
   return <R, E, A>(
     effect: T.Effect<R & Has<Span>, E, A>
   ): T.Effect<R & Has<Tracer>, E, A> => {
     const createSpan = withTracer((tracer) =>
       T.access((r: unknown) => {
         const maybeSpan = Span.readOption(r)
+        if (ctx) {
+          return tracer.startSpan(name, options, ctx)
+        }
         if (options?.root !== true && O.isSome(maybeSpan)) {
           const ctx = trace.setSpan(context.active(), maybeSpan.value.span)
           return tracer.startSpan(name, options, ctx)
