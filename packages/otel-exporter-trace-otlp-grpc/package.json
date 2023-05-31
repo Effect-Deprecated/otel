@@ -33,7 +33,7 @@
     "@effect-ts/otel": "^0.14.1"
   },
   "devDependencies": {
-    "@opentelemetry/exporter-trace-otlp-grpc": "0.31.0"
+    "@opentelemetry/exporter-trace-otlp-grpc": "0.39.1"
   },
   "config": {
     "side": [],
