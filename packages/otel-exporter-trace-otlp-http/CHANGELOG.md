@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/Effect-TS/otel/compare/@effect-ts/otel-exporter-trace-otlp-http@0.14.1...@effect-ts/otel-exporter-trace-otlp-http@0.15.0) (2023-05-31)
+
+**Note:** Version bump only for package @effect-ts/otel-exporter-trace-otlp-http
+
+
+
+
+
 ## [0.14.1](https://github.com/Effect-TS/otel/compare/@effect-ts/otel-exporter-trace-otlp-http@0.14.0...@effect-ts/otel-exporter-trace-otlp-http@0.14.1) (2022-08-15)
 
 **Note:** Version bump only for package @effect-ts/otel-exporter-trace-otlp-http
