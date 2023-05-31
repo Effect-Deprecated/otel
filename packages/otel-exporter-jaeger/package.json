@@ -1,6 +1,6 @@
 {
   "name": "@effect-ts/otel-exporter-jaeger",
-  "version": "0.15.0",
+  "version": "0.15.1",
   "license": "MIT",
   "repository": "https://github.com/Effect-TS/otel.git",
   "homepage": "https://www.matechs.com",
@@ -30,7 +30,7 @@
     "@opentelemetry/sdk-trace-base": "^1.13.0"
   },
   "dependencies": {
-    "@effect-ts/otel": "^0.15.0"
+    "@effect-ts/otel": "^0.15.1"
   },
   "devDependencies": {
     "@opentelemetry/exporter-jaeger": "1.13.0"
