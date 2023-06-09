@@ -38,23 +38,7 @@ export const makeJaegerTracingSpanExporter = M.gen(function* (_) {
   const spanExporter = yield* _(
     pipe(
       T.succeedWith(() => new JaegerExporter(config)),
-      M.make((p) =>
-        // NOTE Unfortunately this workaround/"hack" is currently needed since Otel doesn't yet provide a graceful
-        // way to shutdown.
-        //
-        // Related issue: https://github.com/open-telemetry/opentelemetry-js/issues/987
-        pipe(
-          T.sleep(2_000),
-          T.zipRight(T.promise(() => p.shutdown())),
-          T.zipRight(
-            T.effectAsync<unknown, never, void>((cb) => {
-              p["_sender"]["_client"].once("close", () => {
-                cb(T.unit)
-              })
-            })
-          )
-        )
-      )
+      M.make((p) => T.promise(() => p.shutdown()))
     )
   )
 
