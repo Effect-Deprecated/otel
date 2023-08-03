@@ -4867,13 +4867,13 @@ __metadata:
   linkType: hard
 
 "eslint-config-prettier@npm:^8.4.0":
-  version: 8.4.0
-  resolution: "eslint-config-prettier@npm:8.4.0"
+  version: 8.10.0
+  resolution: "eslint-config-prettier@npm:8.10.0"
   peerDependencies:
     eslint: ">=7.0.0"
   bin:
     eslint-config-prettier: bin/cli.js
-  checksum: ee8dc343f1fed15dc0658e190a966cc23644477f2331a7f56ae2bb79dd74892e3cde8ea5c142e7a3329a8291a1de041e13ca96e54d0c85ff4a2aba13390c5f10
+  checksum: 153266badd477e49b0759816246b2132f1dbdb6c7f313ca60a9af5822fd1071c2bc5684a3720d78b725452bbac04bb130878b2513aea5e72b1b792de5a69fec8
   languageName: node
   linkType: hard
 
