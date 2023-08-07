@@ -4674,7 +4674,7 @@ __metadata:
     cpx: ^1.5.0
     cz-conventional-changelog: ^3.3.0
     eslint: ^8.10.0
-    eslint-config-prettier: ^8.4.0
+    eslint-config-prettier: ^9.0.0
     eslint-import-resolver-typescript: ^2.5.0
     eslint-plugin-codegen: ^0.16.1
     eslint-plugin-import: ^2.25.4
@@ -4866,14 +4866,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^8.4.0":
-  version: 8.4.0
-  resolution: "eslint-config-prettier@npm:8.4.0"
+"eslint-config-prettier@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "eslint-config-prettier@npm:9.0.0"
   peerDependencies:
     eslint: ">=7.0.0"
   bin:
     eslint-config-prettier: bin/cli.js
-  checksum: ee8dc343f1fed15dc0658e190a966cc23644477f2331a7f56ae2bb79dd74892e3cde8ea5c142e7a3329a8291a1de041e13ca96e54d0c85ff4a2aba13390c5f10
+  checksum: 362e991b6cb343f79362bada2d97c202e5303e6865888918a7445c555fb75e4c078b01278e90be98aa98ae22f8597d8e93d48314bec6824f540f7efcab3ce451
   languageName: node
   linkType: hard
 
