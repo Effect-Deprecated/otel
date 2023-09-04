@@ -54,7 +54,7 @@
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.21",
     "@types/rimraf": "^3.0.2",
-    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/eslint-plugin": "^6.6.0",
     "@typescript-eslint/parser": "^5.12.1",
     "babel-plugin-annotate-pure-calls": "^0.4.0",
     "babel-plugin-replace-import-extension": "^1.1.2",
